@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,7 +9,7 @@ public enum FieldOccupierType {
     BARRICADE
 }
 
-public class FieldOccupier : MonoBehaviour {
+public abstract class FieldOccupier : MonoBehaviour {
 
     private Field startField;
 
