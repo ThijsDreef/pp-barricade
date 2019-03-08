@@ -14,9 +14,9 @@ public abstract class FieldOccupier : MonoBehaviour {
     private Field startField;
 
     [SerializeField]
-    private Field currentField;
+    protected Field currentField;
 
-    private FieldOccupierType myType;
+    protected FieldOccupierType myType;
 
     /// <summary> all fieldOccupiers must implement this function to move to fields </summary>
     public abstract void MoveToField(Field nextField, Action callback);
