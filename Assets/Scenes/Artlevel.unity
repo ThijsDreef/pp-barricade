@@ -6685,7 +6685,7 @@ GameObject:
   m_Component:
   - component: {fileID: 872043861}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: FieldHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7705,7 +7705,6 @@ GameObject:
   - component: {fileID: 990885429}
   - component: {fileID: 990885433}
   - component: {fileID: 990885432}
-  - component: {fileID: 990885434}
   m_Layer: 8
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -7854,46 +7853,6 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
---- !u!114 &990885434
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 990885428}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60e318a6043c1cb4a8ce1c8805bab930, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  supportHDRTextures: 1
-  supportDX11: 1
-  isSupported: 1
-  createdMaterials:
-  - {fileID: 0}
-  - {fileID: 0}
-  resolution: 2
-  screenBlendMode: 1
-  sunTransform: {fileID: 1069819929}
-  radialBlurIterations: 2
-  sunColor:
-    r: 0.6745283
-    g: 0.97847605
-    b: 1
-    a: 1
-  sunThreshold:
-    r: 0.87
-    g: 0.74
-    b: 0.65
-    a: 1
-  sunShaftBlurRadius: 2.5
-  sunShaftIntensity: 1.15
-  maxRadius: 0.75
-  useDepthTexture: 1
-  sunShaftsShader: {fileID: 4800000, guid: d3b1c8c1036784176946f5cfbfb7fe4c, type: 3}
-  sunShaftsMaterial: {fileID: 0}
-  simpleClearShader: {fileID: 4800000, guid: f688f89ed5eb847c5b19c934a0f1e772, type: 3}
-  simpleClearMaterial: {fileID: 0}
 --- !u!1 &996429642
 GameObject:
   m_ObjectHideFlags: 0
