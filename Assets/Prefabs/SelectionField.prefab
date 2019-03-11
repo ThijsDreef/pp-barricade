@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4911366575279223235}
   - component: {fileID: 4911366575279223233}
   - component: {fileID: 4911366575279223232}
+  - component: {fileID: 7430436299316348636}
   m_Layer: 0
   m_Name: SelectionField
   m_TagString: Untagged
@@ -77,3 +78,18 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &7430436299316348636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4911366575279223234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3201974702311564593e7f42a74a5f48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextFields: []
+  previousFields: []
+  onField: {fileID: 0}
