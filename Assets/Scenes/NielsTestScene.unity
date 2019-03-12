@@ -22031,4 +22031,5 @@ MonoBehaviour:
   currentField: {fileID: 476418385}
   movementSpeed: 0
   moving: 0
-  nextField: {fileID: 0}
+  nextField: {fileID: 374434666}
+  step: 2.5

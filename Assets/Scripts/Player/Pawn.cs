@@ -28,7 +28,7 @@ public class Pawn : FieldOccupier {
         do {
             transform.position =  Vector3.MoveTowards(transform.position, target, step * Time.deltaTime);
             transform.LookAt(target);
-            yield return null;
+            yield return new WaitForEndOfFrame();
         } while (transform.position != target);
         callback?.Invoke();
         currentField = nextField;
