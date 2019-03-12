@@ -5,9 +5,7 @@ using UnityEngine;
 public class Field : MonoBehaviour {
 
     [SerializeField]
-    private List<Field> nextFields;
-    [SerializeField]
-    private List<Field> previousFields;  
+    private List<Field> neighbours;
     public FieldOccupier onField;
 
     public void HighLight(bool on) {
