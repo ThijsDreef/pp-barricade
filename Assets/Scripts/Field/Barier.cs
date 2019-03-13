@@ -11,4 +11,10 @@ public class Barier : FieldOccupier {
         this.transform.position = nextField.transform.position;
         callback();
     }
+
+    public override void EnableHighlight(bool enabled, Color color) {
+        selectable = enabled;
+        gameObject.GetComponent<Renderer>().material.color = color;
+        if (!enabled) gameObject.GetComponent<Renderer>().material.color = originalColor;
+    }
 }

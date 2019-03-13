@@ -13,13 +13,18 @@ public class Pawn : FieldOccupier {
     [SerializeField]
     private float step = 2f;
     private float yOffset = .55f;
-    void Start() {
 
-    }
+    public int Type { get; protected set; }
 
     /// <summary>starts a coroutine that makes the GameObject move to nextField.</summary>
     public override void MoveToField(Field nextField, Action callback) {
         StartCoroutine(MoveStep(nextField, callback));
+    }
+
+    public override void EnableHighlight(bool enabled, Color color) {
+        selectable = enabled;
+        gameObject.GetComponent<Renderer>().material.color = color;
+        if (!enabled) gameObject.GetComponent<Renderer>().material.color = originalColor;
     }
 
     /// <summary>coroutine for iterating current GameObject position and rotation to nextField position and moving direction.</summary>
