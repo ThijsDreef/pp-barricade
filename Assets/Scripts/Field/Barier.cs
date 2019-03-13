@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Barier : FieldOccupier {
 
+    private ParticleSystem highlighter;
+
     public override void MoveToField(Field nextField, Action callback) {
         currentField = nextField;
         nextField.onField = this;
@@ -14,7 +16,7 @@ public class Barier : FieldOccupier {
 
     public override void EnableHighlight(bool enabled, Color color) {
         selectable = enabled;
-        gameObject.GetComponent<Renderer>().material.color = color;
-        if (!enabled) gameObject.GetComponent<Renderer>().material.color = originalColor;
+        if(enabled == true) highlighter.Play();
+        else highlighter.Stop();
     }
 }

@@ -10,6 +10,8 @@ public class Pawn : FieldOccupier {
     private float movementSpeed;
     [SerializeField]
     private float yOffset = .55f;
+    [SerializeField]
+    private ParticleSystem highlighter;
 
     public int Type { get; protected set; }
     private const float EPESILON = .001f;
@@ -25,8 +27,8 @@ public class Pawn : FieldOccupier {
 
     public override void EnableHighlight(bool enabled, Color color) {
         selectable = enabled;
-        gameObject.GetComponentInChildren<Renderer>().material.color = color;
-        if (!enabled) gameObject.GetComponentInChildren<Renderer>().material.color = originalColor;
+        if(enabled == true) highlighter.Play();
+        else highlighter.Stop();
     }
 
     /// <summary>coroutine for iterating current GameObject position and rotation to nextField position and moving direction.</summary>
