@@ -9,7 +9,8 @@ public class DiceTrigger : MonoBehaviour
     public Action<int> onDiceNumberSet;
 
     /// Sends through data on wich side it landed. 
-    public void OnTriggerEnter(){
+    public void OnTriggerEnter() {
         onDiceNumberSet(diceSideNumber);
+        SoundManager.Instance.PlaySound("Dice");
     }
 }
