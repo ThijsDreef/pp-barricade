@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: HeavyDice
   m_EditorClassIdentifier: 
   diceNumbers: 020000000200000003000000030000000400000005000000
+  id: 1

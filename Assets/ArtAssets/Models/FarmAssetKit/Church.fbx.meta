@@ -1,0 +1,735 @@
+fileFormatVersion: 2
+guid: e6bab28838f34d84e9e66bad0196bcf2
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: DiagonaleBeam
+    100004: DiagonaleBeam 1
+    100006: DiagonaleBeam 2
+    100008: DiagonaleBeam 3
+    100010: DiagonaleBeam 4
+    100012: DiagonaleBeam 5
+    100014: DiagonaleBeam 6
+    100016: DiagonaleBeam 7
+    100018: EtageBeam1
+    100020: EtageBeam2
+    100022: EtageBeam5
+    100024: EtageBeam6
+    100026: EtageBeam7
+    100028: Footer
+    100030: Footer1
+    100032: Footer2
+    100034: Footer4
+    100036: Footer5
+    100038: Footer5 1
+    100040: FooterCorner
+    100042: FooterCorner1
+    100044: group1
+    100046: group2
+    100048: group3
+    100050: group4
+    100052: HorizontaleBeamTop
+    100054: HorizontaleBeamTop 1
+    100056: HorizontaleBeamTop 2
+    100058: HorizontaleBeamTop 3
+    100060: HorizontaleBeamTop 4
+    100062: HorizontaleBeamTop 5
+    100064: HorizontaleBeamTop 6
+    100066: HorizontaleBeamTop 7
+    100068: HorizontaleBeamTop1
+    100070: HorizontaleBeamTop1 1
+    100072: HorizontaleBeamTop1 2
+    100074: HorizontaleBeamTop1 3
+    100076: HorizontaleBeamTop1 4
+    100078: HorizontaleBeamTop1 5
+    100080: HorizontaleBeamTop1 6
+    100082: HorizontaleBeamTop1 7
+    100084: pCube1
+    100086: pCube10
+    100088: pCube11
+    100090: pCube12
+    100092: pCube13
+    100094: pCube14
+    100096: pCube15
+    100098: pCube3
+    100100: pCube5
+    100102: pCube6
+    100104: pCube8
+    100106: pCube9
+    100108: pSphere1
+    100110: pTorus1
+    100112: Roof
+    100114: RoofSide2
+    100116: RoofSide2 1
+    100118: RoofSide2 2
+    100120: RoofSide3
+    100122: RoofSide3 1
+    100124: VerticaleBeam
+    100126: VerticaleBeam 1
+    100128: VerticaleBeam 2
+    100130: VerticaleBeam1
+    100132: VerticaleBeam2
+    100134: VerticalTussenstuk
+    100136: VerticalTussenstuk 1
+    100138: VerticalTussenstuk 2
+    100140: VerticalTussenstuk 3
+    100142: VerticalTussenstuk 4
+    100144: VerticalTussenstuk 5
+    100146: VerticalTussenstuk 6
+    100148: VerticalTussenstuk 7
+    100150: VerticalTussenstuk2
+    100152: VerticalTussenstuk3
+    100154: Wall
+    100156: Wall 1
+    100158: Wall 2
+    100160: Wall 3
+    100162: Wall 4
+    100164: Wall 5
+    100166: Wall 6
+    100168: Wall 7
+    100170: Wall 8
+    100172: Wall 9
+    100174: Wall15
+    100176: Wall8
+    100178: Wall9
+    100180: Wall_Door
+    100182: wall_RoofRight1
+    100184: WallCorner
+    100186: WallRaam
+    100188: WallRaam 1
+    100190: WallRaam 2
+    100192: WallRaam 3
+    100194: WallRaam 4
+    100196: WallRaam 5
+    100198: WallWindow
+    100200: WallWindow3
+    100202: WallWindow4
+    100204: WallWindow4 1
+    100206: WallWindow5
+    100208: WallWindow6
+    100210: WindowHorizontalBottom
+    100212: WindowHorizontalBottom 1
+    100214: WindowHorizontalBottom 2
+    100216: WindowHorizontalBottom 3
+    100218: WindowHorizontalBottom 4
+    100220: WindowHorizontalBottom 5
+    100222: WindowHorizontaleBeam
+    100224: WindowHorizontaleBeam 1
+    100226: WindowHorizontaleBeam 2
+    100228: WindowHorizontaleBeam 3
+    100230: WindowHorizontaleBeam 4
+    100232: WindowHorizontaleBeam 5
+    100234: WindowHorizontalTop
+    100236: WindowHorizontalTop 1
+    100238: WindowHorizontalTop 2
+    100240: WindowHorizontalTop 3
+    100242: WindowHorizontalTop 4
+    100244: WindowHorizontalTop 5
+    100246: WindowVerticalRechts
+    100248: WindowVerticalRechts 1
+    100250: WindowVerticalRechts 2
+    100252: WindowVerticalRechts 3
+    100254: WindowVerticalRechts 4
+    100256: WindowVerticalRechts 5
+    100258: WindowVerticalRechts1
+    100260: WindowVerticalRechts1 1
+    100262: WindowVerticalRechts1 2
+    100264: WindowVerticalRechts1 3
+    100266: WindowVerticalRechts1 4
+    100268: WindowVerticalRechts1 5
+    100270: pCube16
+    100272: pCube17
+    400000: //RootNode
+    400002: DiagonaleBeam
+    400004: DiagonaleBeam 1
+    400006: DiagonaleBeam 2
+    400008: DiagonaleBeam 3
+    400010: DiagonaleBeam 4
+    400012: DiagonaleBeam 5
+    400014: DiagonaleBeam 6
+    400016: DiagonaleBeam 7
+    400018: EtageBeam1
+    400020: EtageBeam2
+    400022: EtageBeam5
+    400024: EtageBeam6
+    400026: EtageBeam7
+    400028: Footer
+    400030: Footer1
+    400032: Footer2
+    400034: Footer4
+    400036: Footer5
+    400038: Footer5 1
+    400040: FooterCorner
+    400042: FooterCorner1
+    400044: group1
+    400046: group2
+    400048: group3
+    400050: group4
+    400052: HorizontaleBeamTop
+    400054: HorizontaleBeamTop 1
+    400056: HorizontaleBeamTop 2
+    400058: HorizontaleBeamTop 3
+    400060: HorizontaleBeamTop 4
+    400062: HorizontaleBeamTop 5
+    400064: HorizontaleBeamTop 6
+    400066: HorizontaleBeamTop 7
+    400068: HorizontaleBeamTop1
+    400070: HorizontaleBeamTop1 1
+    400072: HorizontaleBeamTop1 2
+    400074: HorizontaleBeamTop1 3
+    400076: HorizontaleBeamTop1 4
+    400078: HorizontaleBeamTop1 5
+    400080: HorizontaleBeamTop1 6
+    400082: HorizontaleBeamTop1 7
+    400084: pCube1
+    400086: pCube10
+    400088: pCube11
+    400090: pCube12
+    400092: pCube13
+    400094: pCube14
+    400096: pCube15
+    400098: pCube3
+    400100: pCube5
+    400102: pCube6
+    400104: pCube8
+    400106: pCube9
+    400108: pSphere1
+    400110: pTorus1
+    400112: Roof
+    400114: RoofSide2
+    400116: RoofSide2 1
+    400118: RoofSide2 2
+    400120: RoofSide3
+    400122: RoofSide3 1
+    400124: VerticaleBeam
+    400126: VerticaleBeam 1
+    400128: VerticaleBeam 2
+    400130: VerticaleBeam1
+    400132: VerticaleBeam2
+    400134: VerticalTussenstuk
+    400136: VerticalTussenstuk 1
+    400138: VerticalTussenstuk 2
+    400140: VerticalTussenstuk 3
+    400142: VerticalTussenstuk 4
+    400144: VerticalTussenstuk 5
+    400146: VerticalTussenstuk 6
+    400148: VerticalTussenstuk 7
+    400150: VerticalTussenstuk2
+    400152: VerticalTussenstuk3
+    400154: Wall
+    400156: Wall 1
+    400158: Wall 2
+    400160: Wall 3
+    400162: Wall 4
+    400164: Wall 5
+    400166: Wall 6
+    400168: Wall 7
+    400170: Wall 8
+    400172: Wall 9
+    400174: Wall15
+    400176: Wall8
+    400178: Wall9
+    400180: Wall_Door
+    400182: wall_RoofRight1
+    400184: WallCorner
+    400186: WallRaam
+    400188: WallRaam 1
+    400190: WallRaam 2
+    400192: WallRaam 3
+    400194: WallRaam 4
+    400196: WallRaam 5
+    400198: WallWindow
+    400200: WallWindow3
+    400202: WallWindow4
+    400204: WallWindow4 1
+    400206: WallWindow5
+    400208: WallWindow6
+    400210: WindowHorizontalBottom
+    400212: WindowHorizontalBottom 1
+    400214: WindowHorizontalBottom 2
+    400216: WindowHorizontalBottom 3
+    400218: WindowHorizontalBottom 4
+    400220: WindowHorizontalBottom 5
+    400222: WindowHorizontaleBeam
+    400224: WindowHorizontaleBeam 1
+    400226: WindowHorizontaleBeam 2
+    400228: WindowHorizontaleBeam 3
+    400230: WindowHorizontaleBeam 4
+    400232: WindowHorizontaleBeam 5
+    400234: WindowHorizontalTop
+    400236: WindowHorizontalTop 1
+    400238: WindowHorizontalTop 2
+    400240: WindowHorizontalTop 3
+    400242: WindowHorizontalTop 4
+    400244: WindowHorizontalTop 5
+    400246: WindowVerticalRechts
+    400248: WindowVerticalRechts 1
+    400250: WindowVerticalRechts 2
+    400252: WindowVerticalRechts 3
+    400254: WindowVerticalRechts 4
+    400256: WindowVerticalRechts 5
+    400258: WindowVerticalRechts1
+    400260: WindowVerticalRechts1 1
+    400262: WindowVerticalRechts1 2
+    400264: WindowVerticalRechts1 3
+    400266: WindowVerticalRechts1 4
+    400268: WindowVerticalRechts1 5
+    400270: pCube16
+    400272: pCube17
+    2100000: Farm
+    2100002: lambert1
+    2300000: DiagonaleBeam
+    2300002: DiagonaleBeam 1
+    2300004: DiagonaleBeam 2
+    2300006: DiagonaleBeam 3
+    2300008: DiagonaleBeam 4
+    2300010: DiagonaleBeam 5
+    2300012: DiagonaleBeam 6
+    2300014: DiagonaleBeam 7
+    2300016: EtageBeam1
+    2300018: EtageBeam2
+    2300020: EtageBeam5
+    2300022: EtageBeam6
+    2300024: EtageBeam7
+    2300026: Footer
+    2300028: Footer1
+    2300030: Footer2
+    2300032: Footer4
+    2300034: Footer5
+    2300036: Footer5 1
+    2300038: FooterCorner
+    2300040: FooterCorner1
+    2300042: HorizontaleBeamTop
+    2300044: HorizontaleBeamTop 1
+    2300046: HorizontaleBeamTop 2
+    2300048: HorizontaleBeamTop 3
+    2300050: HorizontaleBeamTop 4
+    2300052: HorizontaleBeamTop 5
+    2300054: HorizontaleBeamTop 6
+    2300056: HorizontaleBeamTop 7
+    2300058: HorizontaleBeamTop1
+    2300060: HorizontaleBeamTop1 1
+    2300062: HorizontaleBeamTop1 2
+    2300064: HorizontaleBeamTop1 3
+    2300066: HorizontaleBeamTop1 4
+    2300068: HorizontaleBeamTop1 5
+    2300070: HorizontaleBeamTop1 6
+    2300072: HorizontaleBeamTop1 7
+    2300074: pCube1
+    2300076: pCube10
+    2300078: pCube11
+    2300080: pCube12
+    2300082: pCube13
+    2300084: pCube14
+    2300086: pCube15
+    2300088: pCube3
+    2300090: pCube5
+    2300092: pCube6
+    2300094: pCube8
+    2300096: pCube9
+    2300098: pSphere1
+    2300100: pTorus1
+    2300102: Roof
+    2300104: RoofSide2
+    2300106: RoofSide2 1
+    2300108: RoofSide2 2
+    2300110: RoofSide3
+    2300112: RoofSide3 1
+    2300114: VerticaleBeam
+    2300116: VerticaleBeam 1
+    2300118: VerticaleBeam 2
+    2300120: VerticaleBeam1
+    2300122: VerticaleBeam2
+    2300124: VerticalTussenstuk
+    2300126: VerticalTussenstuk 1
+    2300128: VerticalTussenstuk 2
+    2300130: VerticalTussenstuk 3
+    2300132: VerticalTussenstuk 4
+    2300134: VerticalTussenstuk 5
+    2300136: VerticalTussenstuk 6
+    2300138: VerticalTussenstuk 7
+    2300140: VerticalTussenstuk2
+    2300142: VerticalTussenstuk3
+    2300144: Wall 1
+    2300146: Wall 2
+    2300148: Wall 3
+    2300150: Wall 4
+    2300152: Wall 5
+    2300154: Wall 6
+    2300156: Wall 7
+    2300158: Wall 8
+    2300160: Wall 9
+    2300162: Wall8
+    2300164: Wall9
+    2300166: WallRaam
+    2300168: WallRaam 1
+    2300170: WallRaam 2
+    2300172: WallRaam 3
+    2300174: WallRaam 4
+    2300176: WallRaam 5
+    2300178: WindowHorizontalBottom
+    2300180: WindowHorizontalBottom 1
+    2300182: WindowHorizontalBottom 2
+    2300184: WindowHorizontalBottom 3
+    2300186: WindowHorizontalBottom 4
+    2300188: WindowHorizontalBottom 5
+    2300190: WindowHorizontaleBeam
+    2300192: WindowHorizontaleBeam 1
+    2300194: WindowHorizontaleBeam 2
+    2300196: WindowHorizontaleBeam 3
+    2300198: WindowHorizontaleBeam 4
+    2300200: WindowHorizontaleBeam 5
+    2300202: WindowHorizontalTop
+    2300204: WindowHorizontalTop 1
+    2300206: WindowHorizontalTop 2
+    2300208: WindowHorizontalTop 3
+    2300210: WindowHorizontalTop 4
+    2300212: WindowHorizontalTop 5
+    2300214: WindowVerticalRechts
+    2300216: WindowVerticalRechts 1
+    2300218: WindowVerticalRechts 2
+    2300220: WindowVerticalRechts 3
+    2300222: WindowVerticalRechts 4
+    2300224: WindowVerticalRechts 5
+    2300226: WindowVerticalRechts1
+    2300228: WindowVerticalRechts1 1
+    2300230: WindowVerticalRechts1 2
+    2300232: WindowVerticalRechts1 3
+    2300234: WindowVerticalRechts1 4
+    2300236: WindowVerticalRechts1 5
+    2300238: pCube16
+    2300240: pCube17
+    3300000: DiagonaleBeam
+    3300002: DiagonaleBeam 1
+    3300004: DiagonaleBeam 2
+    3300006: DiagonaleBeam 3
+    3300008: DiagonaleBeam 4
+    3300010: DiagonaleBeam 5
+    3300012: DiagonaleBeam 6
+    3300014: DiagonaleBeam 7
+    3300016: EtageBeam1
+    3300018: EtageBeam2
+    3300020: EtageBeam5
+    3300022: EtageBeam6
+    3300024: EtageBeam7
+    3300026: Footer
+    3300028: Footer1
+    3300030: Footer2
+    3300032: Footer4
+    3300034: Footer5
+    3300036: Footer5 1
+    3300038: FooterCorner
+    3300040: FooterCorner1
+    3300042: HorizontaleBeamTop
+    3300044: HorizontaleBeamTop 1
+    3300046: HorizontaleBeamTop 2
+    3300048: HorizontaleBeamTop 3
+    3300050: HorizontaleBeamTop 4
+    3300052: HorizontaleBeamTop 5
+    3300054: HorizontaleBeamTop 6
+    3300056: HorizontaleBeamTop 7
+    3300058: HorizontaleBeamTop1
+    3300060: HorizontaleBeamTop1 1
+    3300062: HorizontaleBeamTop1 2
+    3300064: HorizontaleBeamTop1 3
+    3300066: HorizontaleBeamTop1 4
+    3300068: HorizontaleBeamTop1 5
+    3300070: HorizontaleBeamTop1 6
+    3300072: HorizontaleBeamTop1 7
+    3300074: pCube1
+    3300076: pCube10
+    3300078: pCube11
+    3300080: pCube12
+    3300082: pCube13
+    3300084: pCube14
+    3300086: pCube15
+    3300088: pCube3
+    3300090: pCube5
+    3300092: pCube6
+    3300094: pCube8
+    3300096: pCube9
+    3300098: pSphere1
+    3300100: pTorus1
+    3300102: Roof
+    3300104: RoofSide2
+    3300106: RoofSide2 1
+    3300108: RoofSide2 2
+    3300110: RoofSide3
+    3300112: RoofSide3 1
+    3300114: VerticaleBeam
+    3300116: VerticaleBeam 1
+    3300118: VerticaleBeam 2
+    3300120: VerticaleBeam1
+    3300122: VerticaleBeam2
+    3300124: VerticalTussenstuk
+    3300126: VerticalTussenstuk 1
+    3300128: VerticalTussenstuk 2
+    3300130: VerticalTussenstuk 3
+    3300132: VerticalTussenstuk 4
+    3300134: VerticalTussenstuk 5
+    3300136: VerticalTussenstuk 6
+    3300138: VerticalTussenstuk 7
+    3300140: VerticalTussenstuk2
+    3300142: VerticalTussenstuk3
+    3300144: Wall 1
+    3300146: Wall 2
+    3300148: Wall 3
+    3300150: Wall 4
+    3300152: Wall 5
+    3300154: Wall 6
+    3300156: Wall 7
+    3300158: Wall 8
+    3300160: Wall 9
+    3300162: Wall8
+    3300164: Wall9
+    3300166: WallRaam
+    3300168: WallRaam 1
+    3300170: WallRaam 2
+    3300172: WallRaam 3
+    3300174: WallRaam 4
+    3300176: WallRaam 5
+    3300178: WindowHorizontalBottom
+    3300180: WindowHorizontalBottom 1
+    3300182: WindowHorizontalBottom 2
+    3300184: WindowHorizontalBottom 3
+    3300186: WindowHorizontalBottom 4
+    3300188: WindowHorizontalBottom 5
+    3300190: WindowHorizontaleBeam
+    3300192: WindowHorizontaleBeam 1
+    3300194: WindowHorizontaleBeam 2
+    3300196: WindowHorizontaleBeam 3
+    3300198: WindowHorizontaleBeam 4
+    3300200: WindowHorizontaleBeam 5
+    3300202: WindowHorizontalTop
+    3300204: WindowHorizontalTop 1
+    3300206: WindowHorizontalTop 2
+    3300208: WindowHorizontalTop 3
+    3300210: WindowHorizontalTop 4
+    3300212: WindowHorizontalTop 5
+    3300214: WindowVerticalRechts
+    3300216: WindowVerticalRechts 1
+    3300218: WindowVerticalRechts 2
+    3300220: WindowVerticalRechts 3
+    3300222: WindowVerticalRechts 4
+    3300224: WindowVerticalRechts 5
+    3300226: WindowVerticalRechts1
+    3300228: WindowVerticalRechts1 1
+    3300230: WindowVerticalRechts1 2
+    3300232: WindowVerticalRechts1 3
+    3300234: WindowVerticalRechts1 4
+    3300236: WindowVerticalRechts1 5
+    3300238: pCube16
+    3300240: pCube17
+    4300000: DiagonaleBeam
+    4300002: VerticalTussenstuk
+    4300004: VerticaleBeam
+    4300006: Wall
+    4300008: HorizontaleBeamTop
+    4300010: HorizontaleBeamTop1
+    4300012: WindowHorizontalTop
+    4300014: WindowHorizontalBottom
+    4300016: WindowVerticalRechts1
+    4300018: WindowVerticalRechts
+    4300020: WallRaam
+    4300022: Wall
+    4300024: WindowHorizontaleBeam
+    4300026: DiagonaleBeam
+    4300028: VerticalTussenstuk
+    4300030: VerticaleBeam
+    4300032: HorizontaleBeamTop
+    4300034: HorizontaleBeamTop1
+    4300036: pCube1
+    4300038: pCube6
+    4300040: pCube8
+    4300042: pCube9
+    4300044: pCube10
+    4300046: pCube11
+    4300048: pCube12
+    4300050: pCube13
+    4300052: pCube14
+    4300054: pCube15
+    4300056: Footer
+    4300058: FooterCorner
+    4300060: pCube3
+    4300062: pSphere1
+    4300064: pTorus1
+    4300066: Footer1
+    4300068: Wall8
+    4300070: Wall9
+    4300072: VerticalTussenstuk2
+    4300074: VerticalTussenstuk3
+    4300076: pCube5
+    4300078: Roof
+    4300080: Footer2
+    4300082: EtageBeam2
+    4300084: FooterCorner1
+    4300086: Wall
+    4300088: VerticaleBeam1
+    4300090: EtageBeam1
+    4300092: VerticaleBeam2
+    4300094: RoofSide2
+    4300096: Footer4
+    4300098: WindowHorizontalTop
+    4300100: WindowHorizontalBottom
+    4300102: WindowVerticalRechts1
+    4300104: WindowVerticalRechts
+    4300106: WallRaam
+    4300108: Wall
+    4300110: WindowHorizontaleBeam
+    4300112: DiagonaleBeam
+    4300114: VerticalTussenstuk
+    4300116: HorizontaleBeamTop
+    4300118: HorizontaleBeamTop1
+    4300120: WindowHorizontalTop
+    4300122: WindowHorizontalBottom
+    4300124: WindowVerticalRechts1
+    4300126: WindowVerticalRechts
+    4300128: WallRaam
+    4300130: Wall
+    4300132: WindowHorizontaleBeam
+    4300134: DiagonaleBeam
+    4300136: VerticalTussenstuk
+    4300138: HorizontaleBeamTop
+    4300140: HorizontaleBeamTop1
+    4300142: DiagonaleBeam
+    4300144: VerticalTussenstuk
+    4300146: Wall
+    4300148: HorizontaleBeamTop
+    4300150: HorizontaleBeamTop1
+    4300152: WindowHorizontalTop
+    4300154: WindowHorizontalBottom
+    4300156: WindowVerticalRechts1
+    4300158: WindowVerticalRechts
+    4300160: WallRaam
+    4300162: Wall
+    4300164: WindowHorizontaleBeam
+    4300166: DiagonaleBeam
+    4300168: VerticalTussenstuk
+    4300170: VerticaleBeam
+    4300172: HorizontaleBeamTop
+    4300174: HorizontaleBeamTop1
+    4300176: EtageBeam5
+    4300178: EtageBeam6
+    4300180: EtageBeam7
+    4300182: RoofSide3
+    4300184: RoofSide2
+    4300186: WindowHorizontalTop
+    4300188: WindowHorizontalBottom
+    4300190: WindowVerticalRechts1
+    4300192: WindowVerticalRechts
+    4300194: WallRaam
+    4300196: Wall
+    4300198: WindowHorizontaleBeam
+    4300200: DiagonaleBeam
+    4300202: VerticalTussenstuk
+    4300204: HorizontaleBeamTop
+    4300206: HorizontaleBeamTop1
+    4300208: Footer5
+    4300210: RoofSide3
+    4300212: RoofSide2
+    4300214: WindowHorizontalTop
+    4300216: WindowHorizontalBottom
+    4300218: WindowVerticalRechts1
+    4300220: WindowVerticalRechts
+    4300222: WallRaam
+    4300224: Wall
+    4300226: WindowHorizontaleBeam
+    4300228: DiagonaleBeam
+    4300230: VerticalTussenstuk
+    4300232: HorizontaleBeamTop
+    4300234: HorizontaleBeamTop1
+    4300236: Footer5
+    4300238: pCube17
+    4300240: pCube16
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Farm
+    second: {fileID: 2100000, guid: da7a0a3890cb52e4b868bb59bc67c7a3, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

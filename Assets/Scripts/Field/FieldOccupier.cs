@@ -23,7 +23,7 @@ public abstract class FieldOccupier : MonoBehaviour {
     protected FieldOccupierType myType;
 
     private void Start() {
-        originalColor = gameObject.GetComponent<Renderer>().material.color;
+        originalColor = gameObject.GetComponentInChildren<Renderer>().material.color;
     }
 
     public abstract void EnableHighlight(bool enabled, Color color);
