@@ -5,17 +5,16 @@ using UnityEngine;
 
 public class Pawn : FieldOccupier {
     [SerializeField]
-    private float movementSpeed;
-    [SerializeField]
-    private bool moving;
-    [SerializeField]
     private Field nextField;
     [SerializeField]
-    private float step = 2f;
+    private float movementSpeed;
+    [SerializeField]
     private float yOffset = .55f;
-    void Start() {
+    private const float EPESILON = .001f;
 
-    }
+    public Action StartMoving;
+    public Action StartAttack;
+    public Action StopMoving;
 
     /// <summary>starts a coroutine that makes the GameObject move to nextField.</summary>
     public override void MoveToField(Field nextField, Action callback) {
@@ -24,14 +23,16 @@ public class Pawn : FieldOccupier {
 
     /// <summary>coroutine for iterating current GameObject position and rotation to nextField position and moving direction.</summary>
     private IEnumerator MoveStep(Field nextField, Action callback) {
+        StartMoving();
         Vector3 target = new Vector3(nextField.transform.position.x, nextField.transform.position.y + yOffset, nextField.transform.position.z);
         do {
-            transform.position =  Vector3.MoveTowards(transform.position, target, step * Time.deltaTime);
+            transform.position =  Vector3.MoveTowards(transform.position, target, (movementSpeed * Time.deltaTime));
             transform.LookAt(target);
             yield return new WaitForEndOfFrame();
-        } while (transform.position != target);
+        } while (Vector3.Distance(transform.position,target) >= EPESILON);
         callback?.Invoke();
         currentField = nextField;
         transform.eulerAngles = Vector3.zero;
+        StopMoving();
     }
 }
