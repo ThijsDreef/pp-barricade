@@ -5,22 +5,22 @@ using UnityEngine;
 public class AnimationController : MonoBehaviour {
     private Animator animator;
     private Pawn pawn;
-    void Start() {
+    private void Start() {
         animator = GetComponent<Animator>();
         pawn = GetComponent<Pawn>();
         pawn.StartMoving += StartmoveAnim;
         pawn.StopMoving += StartIdleAnim;
     }
 
-    void StartmoveAnim() {
+    private void StartmoveAnim() {
         animator.SetTrigger("Walk");
     }
 
-    void StartIdleAnim() {
+    private void StartIdleAnim() {
         animator.SetTrigger("Idle");
     }
 
-    void StartAttackAnim() {
+    private void StartAttackAnim() {
         animator.SetTrigger("Attack");
     }
 }

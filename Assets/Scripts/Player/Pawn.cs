@@ -12,9 +12,9 @@ public class Pawn : FieldOccupier {
     private float yOffset = .55f;
     private const float EPESILON = .001f;
 
-    public event Action StartMoving;
-    public event Action StartAttack;
-    public event Action StopMoving;
+    public Action StartMoving;
+    public Action StartAttack;
+    public Action StopMoving;
 
     /// <summary>starts a coroutine that makes the GameObject move to nextField.</summary>
     public override void MoveToField(Field nextField, Action callback) {
