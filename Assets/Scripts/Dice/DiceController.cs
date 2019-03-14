@@ -7,12 +7,19 @@ public class DiceController : MonoBehaviour
 {
     private int diceRoll;
     private bool isThrown = false;
-    [SerializeField] private int upForce = 600, forwardForce = 600;
-
+    private DiceTrigger[] diceTriggers;
+    [SerializeField] 
+    private int upForce = 600, forwardForce = 600;
+    [SerializeField]
+    private int timeTillFade;
+    private const float START_DISSOLVE_POINT = 0f;
+    private float currentDissolve;
     public DiceData diceData;
     public Rigidbody rb;
-    public DiceTrigger[] diceTriggers;
     public Action<int> onDiceRollFinish;
+    public MeshRenderer renderer;
+    public Material dissolveMaterial;
+    public Transform spawnLocation;
 
     [HideInInspector] public int diceSideNumber;
 
@@ -29,12 +36,32 @@ public class DiceController : MonoBehaviour
         }
     }
 
+    /// <summary> Respawns and dissolves the dice </summary>
+    public void Respawn() {
+        currentDissolve = START_DISSOLVE_POINT;
+        StartCoroutine(Dissolve());
+        
+    }
+
+    private IEnumerator Dissolve() {
+         if(currentDissolve > -0.75f) {
+            yield return new WaitForEndOfFrame();
+            currentDissolve -= 0.01f;
+            dissolveMaterial.SetFloat("_DissolveY", currentDissolve);
+            StartCoroutine(Dissolve());
+         }
+         else {
+            transform.position = spawnLocation.position;
+            dissolveMaterial.SetFloat("_DissolveY", START_DISSOLVE_POINT);
+            isThrown = false;
+            rb.useGravity = false;
+         }
+    }
+
     // Checks on wich side the dice lands and what value is coppled with it.
     private void RollCheck() {
         diceRoll = diceData.diceNumbers[diceSideNumber];
         onDiceRollFinish?.Invoke(diceRoll);
-        isThrown = false;
-        rb.useGravity = false;
     }
 
     private void setRoll(int i) {
@@ -43,6 +70,8 @@ public class DiceController : MonoBehaviour
 
     /// <summary> Activate to roll the dice with the given dice data. </summary>
     public void Roll(DiceData diceData) {
+        renderer.material = diceData.material;
+        dissolveMaterial = diceData.material;
         if(!isThrown) {
             rb.useGravity = true;
             isThrown = true;
