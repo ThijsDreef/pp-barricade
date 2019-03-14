@@ -72,7 +72,7 @@ Material:
     - _AO: 2.4
     - _BaseLight: 0.35
     - _BumpScale: 1
-    - _Cutoff: 0.017
+    - _Cutoff: 0.121
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
@@ -93,7 +93,7 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.62549335, g: 0.764151, b: 0.35684407, a: 1}
+    - _Color: {r: 0.8584906, g: 0.7702724, b: 0.34420612, a: 1}
     - _EmissionColor: {r: 0.35493988, g: 0.35493988, b: 0.35493988, a: 1}
     - _TranslucencyColor: {r: 0.73, g: 0.85, b: 0.41, a: 1}
     - _TreeInstanceColor: {r: 1, g: 1, b: 1, a: 1}
