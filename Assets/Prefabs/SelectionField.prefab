@@ -115,6 +115,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4911366575279223235}
     m_Modifications:
+    - target: {fileID: 8309961226003194787, guid: f26b087e3f6fab041921f98b0f757c6b,
+        type: 3}
+      propertyPath: m_Name
+      value: SelectionParicleEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 8309961226003194787, guid: f26b087e3f6fab041921f98b0f757c6b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8309961226003194786, guid: f26b087e3f6fab041921f98b0f757c6b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -184,16 +194,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8309961226003194787, guid: f26b087e3f6fab041921f98b0f757c6b,
-        type: 3}
-      propertyPath: m_Name
-      value: SelectionParicleEffect
-      objectReference: {fileID: 0}
-    - target: {fileID: 8309961226003194787, guid: f26b087e3f6fab041921f98b0f757c6b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f26b087e3f6fab041921f98b0f757c6b, type: 3}
