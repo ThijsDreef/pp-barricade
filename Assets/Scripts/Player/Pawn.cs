@@ -16,6 +16,7 @@ public class Pawn : FieldOccupier {
     public int Type { get; protected set; }
     private const float EPESILON = .001f;
 
+    public Action<Pawn> onSelect;
     public Action StartMoving;
     public Action StartAttack;
     public Action StopMoving;
@@ -31,6 +32,10 @@ public class Pawn : FieldOccupier {
         else highlighter.Stop();
     }
 
+    private void OnMouseDown() {
+        if (selectable) onSelect?.Invoke(this);
+    }
+    
     /// <summary>coroutine for iterating current GameObject position and rotation to nextField position and moving direction.</summary>
     private IEnumerator MoveStep(Field nextField, Action callback) {
         StartMoving?.Invoke();
@@ -40,9 +45,9 @@ public class Pawn : FieldOccupier {
             transform.LookAt(target);
             yield return new WaitForEndOfFrame();
         } while (Vector3.Distance(transform.position,target) >= EPESILON);
-        callback?.Invoke();
         currentField = nextField;
         transform.eulerAngles = Vector3.zero;
+        callback?.Invoke();
         StopMoving?.Invoke();
     }
 }

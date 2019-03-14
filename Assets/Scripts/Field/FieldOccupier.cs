@@ -14,7 +14,7 @@ public abstract class FieldOccupier : MonoBehaviour {
     private Field startField;
 
     [SerializeField]
-    protected Field currentField;
+    public Field currentField {get; protected set; }
 
     public bool selectable {get; protected set; }
 

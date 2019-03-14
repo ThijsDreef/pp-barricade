@@ -7,8 +7,29 @@ public class Field : MonoBehaviour {
     private List<Field> neighbours;
     public FieldOccupier onField;
 
-    public void HighLight(bool on) {
+    private bool selected ;
+    private Color originalColor;
+  
+ 
+    private void Start() {
 
+        originalColor = GetComponentInChildren<Renderer>().material.color;
     }
+
+    public void HighLight(bool on, Color highlightColor) {
+        if (on) { 
+            GetComponentInChildren<Renderer>().material.color = highlightColor;
+            selected  = on;
+        }
+        else  {
+            GetComponentInChildren<Renderer>().material.color = originalColor;
+            selected = false;
+        }
+    }
+
+    private void OnMouseDown() {
+        if (selected ) GameController.Instance.SelectField(this);
+    }
+
     public List<Field> Neighbours { get {return neighbours; } set { Neighbours = value; } }
 }
