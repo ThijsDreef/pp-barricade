@@ -35,7 +35,7 @@
         }
     },
     "texturesets": {
-        "Pathtest": {
+        "Path": {
             "shader": "Main shader"
         }
     }
