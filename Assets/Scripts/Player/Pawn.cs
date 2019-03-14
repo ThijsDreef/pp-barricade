@@ -20,6 +20,10 @@ public class Pawn : FieldOccupier {
     public Action StartMoving;
     public Action StartAttack;
     public Action StopMoving;
+        
+    private void Start() {
+        myType = FieldOccupierType.PLAYER;
+    }
 
     /// <summary>starts a coroutine that makes the GameObject move to nextField.</summary>
     public override void MoveToField(Field nextField, Action callback) {

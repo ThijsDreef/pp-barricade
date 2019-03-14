@@ -31,5 +31,9 @@ public class Field : MonoBehaviour {
         if (selected ) GameController.Instance.SelectField(this);
     }
 
+    public FieldOccupierType GetOnFieldType() {
+        if (!onField) return FieldOccupierType.EMPTY;
+        else return onField.myType;
+    }
     public List<Field> Neighbours { get {return neighbours; } set { Neighbours = value; } }
 }

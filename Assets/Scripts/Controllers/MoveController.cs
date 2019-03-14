@@ -64,6 +64,17 @@ class MoveController {
       StartPathSelection(currentPawn, currentMoves);
       return;
     }
+    switch (target.GetOnFieldType()) {
+      case FieldOccupierType.BARRICADE: 
+        Debug.Log("stop dit is een barricade");
+        break;
+      case FieldOccupierType.PLAYER: 
+        Debug.Log("stop dit is een mens hit him");
+        break;
+      case FieldOccupierType.EMPTY:
+        Debug.Log("its free real estate");
+        break;
+    }
     StartRecursiveMove(target);
 
 

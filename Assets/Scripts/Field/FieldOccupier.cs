@@ -20,7 +20,7 @@ public abstract class FieldOccupier : MonoBehaviour {
 
     public Color originalColor {get; private set; }
 
-    protected FieldOccupierType myType;
+    public FieldOccupierType myType {get; protected set; }
 
     private void Start() {
         originalColor = gameObject.GetComponentInChildren<Renderer>().material.color;

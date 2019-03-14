@@ -7,6 +7,10 @@ public class Barier : FieldOccupier {
 
     private ParticleSystem highlighter;
 
+    public void Start() {
+        myType = FieldOccupierType.BARRICADE;
+    }
+
     public override void MoveToField(Field nextField, Action callback) {
         currentField = nextField;
         nextField.onField = this;
