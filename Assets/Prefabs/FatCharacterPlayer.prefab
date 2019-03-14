@@ -4652,9 +4652,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7277742380098134425}
   - component: {fileID: 4610824429715820786}
-  - component: {fileID: 612789203799069426}
   - component: {fileID: 5926182958654488926}
   - component: {fileID: 8767343906501851195}
+  - component: {fileID: 7349129503698104152}
   m_Layer: 0
   m_Name: FatCharacterPlayer
   m_TagString: Untagged
@@ -4696,22 +4696,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &612789203799069426
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8344913741085832451}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 220481373e33c524abcabbdb9028966c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentField: {fileID: 0}
-  nextField: {fileID: 0}
-  movementSpeed: 1.6
-  yOffset: 0.08
 --- !u!114 &5926182958654488926
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4738,6 +4722,22 @@ CapsuleCollider:
   m_Height: 11.725282
   m_Direction: 1
   m_Center: {x: 0, y: 5.36264, z: 0}
+--- !u!114 &7349129503698104152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8344913741085832451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd67e45fd23d3964d80d6f2cb2655ee5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentField: {fileID: 0}
+  nextField: {fileID: 0}
+  movementSpeed: 1.6
+  yOffset: 0.08
 --- !u!1 &8387751108476368270
 GameObject:
   m_ObjectHideFlags: 0

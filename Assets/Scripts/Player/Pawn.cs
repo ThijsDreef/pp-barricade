@@ -10,6 +10,8 @@ public class Pawn : FieldOccupier {
     private float movementSpeed;
     [SerializeField]
     private float yOffset = .55f;
+
+    public int Type { get; protected set; }
     private const float EPESILON = .001f;
 
     public Action StartMoving;
@@ -21,9 +23,15 @@ public class Pawn : FieldOccupier {
         StartCoroutine(MoveStep(nextField, callback));
     }
 
+    public override void EnableHighlight(bool enabled, Color color) {
+        selectable = enabled;
+        gameObject.GetComponentInChildren<Renderer>().material.color = color;
+        if (!enabled) gameObject.GetComponentInChildren<Renderer>().material.color = originalColor;
+    }
+
     /// <summary>coroutine for iterating current GameObject position and rotation to nextField position and moving direction.</summary>
     private IEnumerator MoveStep(Field nextField, Action callback) {
-        StartMoving();
+        StartMoving?.Invoke();
         Vector3 target = new Vector3(nextField.transform.position.x, nextField.transform.position.y + yOffset, nextField.transform.position.z);
         do {
             transform.position =  Vector3.MoveTowards(transform.position, target, (movementSpeed * Time.deltaTime));
@@ -33,6 +41,6 @@ public class Pawn : FieldOccupier {
         callback?.Invoke();
         currentField = nextField;
         transform.eulerAngles = Vector3.zero;
-        StopMoving();
+        StopMoving?.Invoke();
     }
 }
