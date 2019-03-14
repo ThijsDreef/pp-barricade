@@ -11,6 +11,5 @@ public class DiceTrigger : MonoBehaviour
     /// Sends through data on wich side it landed. 
     public void OnTriggerEnter() {
         onDiceNumberSet(diceSideNumber);
-        SoundManager.Instance.PlaySound("Dice");
     }
 }
