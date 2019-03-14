@@ -94,6 +94,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   neighbours: []
   onField: {fileID: 0}
+  selectionParticle: {fileID: 2017439143585962610}
 --- !u!65 &2439579909073696410
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -114,16 +115,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4911366575279223235}
     m_Modifications:
-    - target: {fileID: 8309961226003194787, guid: f26b087e3f6fab041921f98b0f757c6b,
-        type: 3}
-      propertyPath: m_Name
-      value: SelectionParicleEffect
-      objectReference: {fileID: 0}
-    - target: {fileID: 8309961226003194787, guid: f26b087e3f6fab041921f98b0f757c6b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8309961226003194786, guid: f26b087e3f6fab041921f98b0f757c6b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -194,8 +185,24 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.8
       objectReference: {fileID: 0}
+    - target: {fileID: 8309961226003194787, guid: f26b087e3f6fab041921f98b0f757c6b,
+        type: 3}
+      propertyPath: m_Name
+      value: SelectionParicleEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 8309961226003194787, guid: f26b087e3f6fab041921f98b0f757c6b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f26b087e3f6fab041921f98b0f757c6b, type: 3}
+--- !u!1 &2017439143585962610 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8309961226003194787, guid: f26b087e3f6fab041921f98b0f757c6b,
+    type: 3}
+  m_PrefabInstance: {fileID: 7542838344201828817}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2017439143585962611 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8309961226003194786, guid: f26b087e3f6fab041921f98b0f757c6b,

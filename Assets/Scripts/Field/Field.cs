@@ -6,6 +6,8 @@ public class Field : MonoBehaviour {
     [SerializeField]
     private List<Field> neighbours;
     public FieldOccupier onField;
+    [SerializeField]
+    private GameObject selectionParticle;
 
     public void HighLight(bool on) {
 
