@@ -7,6 +7,8 @@ public class PlayerCounter : MonoBehaviour
 {
     private int playerAmount = 2;
     public Text amountTextField;
+    [SerializeField]
+    private GameController gameController = null;
     
     public void ModifyPlayerAmount(int amount) {
         
@@ -19,5 +21,9 @@ public class PlayerCounter : MonoBehaviour
             playerAmount = 2;
         }
         amountTextField.text = playerAmount.ToString();
+    }
+
+    public void confirm() {
+        gameController.StartGame(playerAmount);
     }
 }

@@ -5,6 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "DiceData", menuName = "Data/Dice")]
 public class DiceData : ScriptableObject{
     public int[] diceNumbers;
+    public int id = 0;
+    public Material material;
 
     // Constructor for the default value's for the dice data.
     public DiceData(){

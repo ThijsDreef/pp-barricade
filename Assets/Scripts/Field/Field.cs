@@ -6,5 +6,9 @@ public class Field : MonoBehaviour {
     [SerializeField]
     private List<Field> neighbours;
     public FieldOccupier onField;
+
+    public void HighLight(bool on) {
+
+    }
     public List<Field> Neighbours { get {return neighbours; } set { Neighbours = value; } }
 }
