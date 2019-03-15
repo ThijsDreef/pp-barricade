@@ -54,6 +54,7 @@ class MoveController {
 
   private void MoveBarrier(Field field) {
     currentBarier.MoveToField(field, GameController.Instance.NextTurn);
+    currentBarier.currentField.onField = null;
     field.onField = currentBarier;
     barierMove = false;
     for (int i = 0 ; i < GameController.Instance.selectableFields.Count; i++) {
@@ -97,6 +98,7 @@ class MoveController {
         StartMoveBarier(lastField.onField);
         break;
     }
+    
     currentPawn.currentField.onField = null;
     lastField.onField = currentPawn;
   }

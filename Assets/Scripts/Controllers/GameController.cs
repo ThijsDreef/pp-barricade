@@ -78,6 +78,8 @@ public class GameController : MonoBehaviour {
       for (int j = 0; j < spawnPawns.Length; j++) {
         Pawn pawn = (Instantiate(spawnPawns[j], fields[j].gameObject.transform.position, Quaternion.identity).GetComponent<Pawn>());
         pawn.startField = fields[j];
+        
+
         pawn.MoveToField(fields[j], null);
         pawn.onSelect += SelectUnit;
         players[i].AddUnit(pawn);
