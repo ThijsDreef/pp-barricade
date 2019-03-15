@@ -123,7 +123,7 @@ class MoveController {
     List<Field> possibleTargets = new List<Field>(currentPawn.currentField.Neighbours);
 
     for (int i = 0; i < currentPawn.currentField.Neighbours.Count; i++) {
-      if (movedFields.Contains(currentPawn.currentField.Neighbours[i]) || currentPawn.currentField.Neighbours[i].GetOnFieldType() == FieldOccupierType.BARRICADE) {
+      if (movedFields.Contains(currentPawn.currentField.Neighbours[i]) || (currentPawn.currentField.Neighbours[i].GetOnFieldType() == FieldOccupierType.BARRICADE && currentMoves != 1)) {
         possibleTargets.Remove(currentPawn.currentField.Neighbours[i]);
         hitBarricade = (currentPawn.currentField.Neighbours[i].GetOnFieldType() == FieldOccupierType.BARRICADE) || hitBarricade;
       } else temp = i;

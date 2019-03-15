@@ -18,13 +18,7 @@ public abstract class FieldOccupier : MonoBehaviour {
 
     public bool selectable {get; protected set; }
 
-    public Color originalColor {get; private set; }
-
     public FieldOccupierType myType {get; protected set; }
-
-    private void Start() {
-        originalColor = gameObject.GetComponentInChildren<Renderer>().material.color;
-    }
 
     public abstract void EnableHighlight(bool enabled, Color color);
     /// <summary> all fieldOccupiers must implement this function to move to fields </summary>

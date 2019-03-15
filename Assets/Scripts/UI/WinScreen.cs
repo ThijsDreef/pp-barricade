@@ -9,7 +9,6 @@ public class WinScreen : MonoBehaviour
 
     private void Start() {
         SoundManager.Instance.PlaySound("Victory");
-        print("Thijs connect deze functie even met de game controller");
-        //winText.text = "Player " + GameController.Instance.currentPlayer + " Wins!";
+        winText.text = "Player " + GameController.Instance.currentPlayer + " Wins!";
     }
 }

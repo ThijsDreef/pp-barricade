@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 5393454861268744903}
   - component: {fileID: 7881266559118064992}
   - component: {fileID: 5379212351206802144}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Barricade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5393454861268744903
 Transform:
@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 864d3e70d0affa34ba30cbc3bcca250a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentField: {fileID: 0}
+  startField: {fileID: 0}
 --- !u!65 &5379212351206802144
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -69,6 +69,46 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 8dacd6e1e12bd384c89d39fb32f1a876, type: 3}
       propertyPath: m_Name
       value: FarmBarricade
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 8dacd6e1e12bd384c89d39fb32f1a876, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 8dacd6e1e12bd384c89d39fb32f1a876, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100016, guid: 8dacd6e1e12bd384c89d39fb32f1a876, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100018, guid: 8dacd6e1e12bd384c89d39fb32f1a876, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100020, guid: 8dacd6e1e12bd384c89d39fb32f1a876, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100022, guid: 8dacd6e1e12bd384c89d39fb32f1a876, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100024, guid: 8dacd6e1e12bd384c89d39fb32f1a876, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100026, guid: 8dacd6e1e12bd384c89d39fb32f1a876, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100028, guid: 8dacd6e1e12bd384c89d39fb32f1a876, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100030, guid: 8dacd6e1e12bd384c89d39fb32f1a876, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8dacd6e1e12bd384c89d39fb32f1a876, type: 3}
       propertyPath: m_LocalPosition.x

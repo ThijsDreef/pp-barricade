@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Barier : FieldOccupier {
 
-    private ParticleSystem highlighter;
+    private ParticleSystem highlighter = null;
 
     public void Start() {
         myType = FieldOccupierType.BARRICADE;
@@ -13,8 +13,7 @@ public class Barier : FieldOccupier {
 
     public override void MoveToField(Field nextField, Action callback) {
         currentField = nextField;
-        transform.position = nextField.transform.position;
-        print("MOVING BARIER");
+        transform.position = nextField.transform.position + new Vector3(0, 0.5f, 0);
         callback?.Invoke();
     }
 

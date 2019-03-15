@@ -4688,7 +4688,7 @@ Animator:
   m_GameObject: {fileID: 8344913741085832451}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: ebb8cbf5937616048ba227ecdd78557c, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1c588882e6c39c745ae9a42efc415786, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -4735,7 +4735,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd67e45fd23d3964d80d6f2cb2655ee5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentField: {fileID: 0}
+  startField: {fileID: 0}
   nextField: {fileID: 0}
   movementSpeed: 1.6
   yOffset: 0.08
@@ -5278,6 +5278,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Highlighter
       objectReference: {fileID: 0}
+    - target: {fileID: 2387993776761061703, guid: 1a2d3264ae6f40f40937e962d3f36716,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2387993776761061702, guid: 1a2d3264ae6f40f40937e962d3f36716,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5331,11 +5336,6 @@ PrefabInstance:
     - target: {fileID: 2387993776761061702, guid: 1a2d3264ae6f40f40937e962d3f36716,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2387993776761061703, guid: 1a2d3264ae6f40f40937e962d3f36716,
-        type: 3}
-      propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

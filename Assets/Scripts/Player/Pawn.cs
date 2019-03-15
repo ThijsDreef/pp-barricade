@@ -7,11 +7,11 @@ public class Pawn : FieldOccupier {
     [SerializeField]
     private Field nextField;
     [SerializeField]
-    private float movementSpeed;
+    private float movementSpeed = 0;
     [SerializeField]
     private float yOffset = .55f;
     [SerializeField]
-    private ParticleSystem highlighter;
+    private ParticleSystem highlighter = null;
 
     public int Type { get; protected set; }
     private const float EPESILON = .001f;
@@ -32,7 +32,6 @@ public class Pawn : FieldOccupier {
 
     public override void EnableHighlight(bool enabled, Color color) {
         selectable = enabled;
-        print(selectable);
         if(enabled == true) highlighter.Play();
         else highlighter.Stop();
     }

@@ -17,7 +17,7 @@ public class DiceController : MonoBehaviour
     public DiceData diceData;
     public Rigidbody rb;
     public Action<int> onDiceRollFinish;
-    public MeshRenderer renderer;
+    public new MeshRenderer renderer;
     public Material dissolveMaterial;
     public Transform spawnLocation;
 

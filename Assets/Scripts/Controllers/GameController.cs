@@ -17,14 +17,14 @@ public class GameController : MonoBehaviour {
   [SerializeField]
   private GameObject[] spawnPawns = new GameObject[4];
   [SerializeField]
-  private GameObject fieldHolder;
+  private GameObject fieldHolder = null;
   [SerializeField]
-  private GameObject[] unselectableRows;
+  private GameObject[] unselectableRows = new GameObject[0];
 
   public List<Field> selectableFields { get; private set;} = new List<Field>();
   private List<PlayerController> players;
   private MoveController moveController = new MoveController();
-  private int currentPlayer;
+  public int currentPlayer { get; private set; }
   private int targetTypeID;
   private int currentRol = 0;
 

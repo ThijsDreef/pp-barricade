@@ -4,32 +4,24 @@ using UnityEngine;
 
 public class Field : MonoBehaviour {
     [SerializeField]
-    private List<Field> neighbours;
+    private List<Field> neighbours = new List<Field>();
 
     [SerializeField]
     public int cost {get; private set; } = 1;
     public FieldOccupier onField;
     [SerializeField]
-    private GameObject selectionParticle;
+    private GameObject selectionParticle = null;
 
     private bool selected ;
-    private Color originalColor;
-
-  
- 
-    private void Start() {
-
-        originalColor = GetComponentInChildren<Renderer>().material.color;
-    }
 
     public void HighLight(bool on, Color highlightColor) {
         if (on) { 
-            GetComponentInChildren<Renderer>().material.color = highlightColor;
+            selectionParticle.SetActive(on);
             selected  = on;
         }
         else  {
-            GetComponentInChildren<Renderer>().material.color = originalColor;
-            selected = false;
+            selectionParticle.SetActive(on);
+            selected = on;
         }
     }
 
