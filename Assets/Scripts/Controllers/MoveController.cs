@@ -33,7 +33,7 @@ class MoveController {
     for (int i = 0 ; i < GameController.Instance.selectableFields.Count; i++) {
       Field field = GameController.Instance.selectableFields[i];
       if (field.GetOnFieldType() == FieldOccupierType.EMPTY) {
-        field.HighLight(true, Color.red);
+        field.BarricadeHighLight(true, Color.red);
       }
     }
   }
@@ -59,7 +59,7 @@ class MoveController {
     barierMove = false;
     for (int i = 0 ; i < GameController.Instance.selectableFields.Count; i++) {
       Field f = GameController.Instance.selectableFields[i];
-      f.HighLight(false, Color.red);
+      f.BarricadeHighLight(false, Color.red);
     }
   }
 
@@ -133,6 +133,7 @@ class MoveController {
 
     if (possibleTargets.Count != 1) {
       ResumePathSelection(hitBarricade);
+      //Idle animation start
       return;
     }
     target = currentPawn.currentField.Neighbours[temp];

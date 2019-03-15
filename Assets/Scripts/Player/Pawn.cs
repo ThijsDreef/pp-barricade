@@ -10,8 +10,9 @@ public class Pawn : FieldOccupier {
     private float movementSpeed = 0;
     [SerializeField]
     private float yOffset = .55f;
+
     [SerializeField]
-    private ParticleSystem highlighter = null;
+    private GameObject highlighterObject;
 
     public int Type { get; protected set; }
     private const float EPESILON = .001f;
@@ -20,7 +21,8 @@ public class Pawn : FieldOccupier {
     public Action StartMoving;
     public Action StartAttack;
     public Action StopMoving;
-        
+
+    private int movesLeft;
     private void Start() {
         myType = FieldOccupierType.PLAYER;
     }
@@ -32,8 +34,8 @@ public class Pawn : FieldOccupier {
 
     public override void EnableHighlight(bool enabled, Color color) {
         selectable = enabled;
-        if(enabled == true) highlighter.Play();
-        else highlighter.Stop();
+        if(enabled == true) highlighterObject.gameObject.SetActive(true);
+        else highlighterObject.gameObject.SetActive(false);
     }
 
     private void OnMouseDown() {
@@ -53,6 +55,8 @@ public class Pawn : FieldOccupier {
         currentField = nextField;
         transform.eulerAngles = Vector3.zero;
         callback?.Invoke();
-        StopMoving?.Invoke();
+        if (movesLeft == 0) {
+            StopMoving?.Invoke();
+        }
     }
 }

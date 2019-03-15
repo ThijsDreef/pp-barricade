@@ -11,6 +11,8 @@ public class Field : MonoBehaviour {
     public FieldOccupier onField;
     [SerializeField]
     private GameObject selectionParticle = null;
+    [SerializeField]
+    private GameObject barricadeParticle = null;
 
     private bool selected ;
 
@@ -21,6 +23,17 @@ public class Field : MonoBehaviour {
         }
         else  {
             selectionParticle.SetActive(on);
+            selected = on;
+        }
+    }
+
+    public void BarricadeHighLight(bool on, Color highlightColor) {
+        if (on) {
+            barricadeParticle.SetActive(on);
+            selected = on;
+        }
+        else {
+            barricadeParticle.SetActive(on);
             selected = on;
         }
     }
