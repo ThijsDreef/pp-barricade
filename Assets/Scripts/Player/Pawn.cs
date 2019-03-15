@@ -49,6 +49,7 @@ public class Pawn : FieldOccupier {
             transform.LookAt(target);
             yield return new WaitForEndOfFrame();
         } while (Vector3.Distance(transform.position,target) >= EPESILON);
+        if (currentField) currentField.onField = null;
         currentField = nextField;
         transform.eulerAngles = Vector3.zero;
         callback?.Invoke();
