@@ -17,7 +17,7 @@ public class DiceController : MonoBehaviour
     public DiceData diceData;
     public Rigidbody rb;
     public Action<int> onDiceRollFinish;
-    public MeshRenderer renderer;
+    public new MeshRenderer renderer;
     public Material dissolveMaterial;
     public Transform spawnLocation;
 
@@ -53,7 +53,6 @@ public class DiceController : MonoBehaviour
          else {
             transform.position = spawnLocation.position;
             dissolveMaterial.SetFloat("_DissolveY", START_DISSOLVE_POINT);
-            isThrown = false;
             rb.useGravity = false;
          }
     }
@@ -62,6 +61,7 @@ public class DiceController : MonoBehaviour
     private void RollCheck() {
         diceRoll = diceData.diceNumbers[diceSideNumber];
         onDiceRollFinish?.Invoke(diceRoll);
+        isThrown = false;
     }
 
     private void setRoll(int i) {

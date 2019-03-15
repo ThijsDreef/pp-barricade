@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class GameController : MonoBehaviour {
+  public static GameController Instance;
+
   [SerializeField]
   private MenuController menuController = null;
   [SerializeField]
@@ -14,18 +16,58 @@ public class GameController : MonoBehaviour {
   private GameObject[] startFields = new GameObject[4];
   [SerializeField]
   private GameObject[] spawnPawns = new GameObject[4];
+  [SerializeField]
+  private GameObject fieldHolder = null;
+  [SerializeField]
+  private GameObject[] unselectableRows = new GameObject[0];
+
+  public List<Field> selectableFields { get; private set;} = new List<Field>();
   private List<PlayerController> players;
-  private int currentPlayer;
+  private MoveController moveController = new MoveController();
+  public int currentPlayer { get; private set; }
   private int targetTypeID;
+  private int currentRol = 0;
 
 
   private void Start() {
     dice.onDiceRollFinish += this.onDiceRollFinish;
+    if (Instance == null) Instance = this;
+    else Destroy(this);
+
+    for (int i = 0; i < fieldHolder.transform.childCount; i++) {
+      bool shouldSkip = false;
+      for (int j = 0; j < unselectableRows.Length; j++) {
+        if (fieldHolder.transform.GetChild(i).gameObject == unselectableRows[j]) {
+          shouldSkip = true;
+          break;
+        }
+      }
+      if (shouldSkip) continue;
+      selectableFields.AddRange(fieldHolder.transform.GetChild(i).GetComponentsInChildren<Field>());
+    }
   }
 
   private void onDiceRollFinish(int i) {
+    currentRol = i;
     if (targetTypeID == 0) players[currentPlayer].HighlightUnits<SneakyPawn>(true, Color.red);
     else players[currentPlayer].HighlightUnits<HeavyPawn>(true, Color.red);
+  }
+
+  public void SelectUnit(Pawn unit) {
+    moveController.StartPathSelection(unit, currentRol);
+    dice.Respawn();
+  }
+
+  public void SelectField(Field field) {
+    if (targetTypeID == 0) players[currentPlayer].HighlightUnits<SneakyPawn>(false, Color.red);
+    else players[currentPlayer].HighlightUnits<HeavyPawn>(false, Color.red);
+    moveController.SelectField(field);
+  }
+
+  public void NextTurn() {
+    currentPlayer += 1;
+    currentPlayer %= players.Count;
+    StartTurn(currentPlayer);
   }
 
   public void StartGame(int playerAmount) {
@@ -35,7 +77,9 @@ public class GameController : MonoBehaviour {
       Field[] fields = startFields[i].GetComponentsInChildren<Field>();
       for (int j = 0; j < spawnPawns.Length; j++) {
         Pawn pawn = (Instantiate(spawnPawns[j], fields[j].gameObject.transform.position, Quaternion.identity).GetComponent<Pawn>());
+        pawn.startField = fields[j];
         pawn.MoveToField(fields[j], null);
+        pawn.onSelect += SelectUnit;
         players[i].AddUnit(pawn);
       }
     }

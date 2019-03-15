@@ -11,20 +11,14 @@ public enum FieldOccupierType {
 
 public abstract class FieldOccupier : MonoBehaviour {
 
-    private Field startField;
+    public Field startField;
 
     [SerializeField]
-    protected Field currentField;
+    public Field currentField {get; protected set; }
 
     public bool selectable {get; protected set; }
 
-    public Color originalColor {get; private set; }
-
-    protected FieldOccupierType myType;
-
-    private void Start() {
-        originalColor = gameObject.GetComponentInChildren<Renderer>().material.color;
-    }
+    public FieldOccupierType myType {get; protected set; }
 
     public abstract void EnableHighlight(bool enabled, Color color);
     /// <summary> all fieldOccupiers must implement this function to move to fields </summary>
