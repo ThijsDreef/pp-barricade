@@ -18,6 +18,7 @@ MonoBehaviour:
   - {fileID: 114317031502660752}
   - {fileID: 114072238760587912}
   - {fileID: 114449875856229912}
+  - {fileID: 114356407016812816}
 --- !u!114 &114072238760587912
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -63,8 +64,8 @@ MonoBehaviour:
     value: {fileID: 2800000, guid: 1063af1a423f4ea4fb3e18595228a7dd, type: 3}
     defaultState: 1
   dirtIntensity:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: 5
 --- !u!114 &114095176038441800
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -92,10 +93,10 @@ MonoBehaviour:
     value: {x: 0.5, y: 0.5}
   intensity:
     overrideState: 1
-    value: 0.442
+    value: 0.25
   smoothness:
-    overrideState: 0
-    value: 0.2
+    overrideState: 1
+    value: 0.23
   roundness:
     overrideState: 0
     value: 1
@@ -130,7 +131,7 @@ MonoBehaviour:
     value: 0
   intensity:
     overrideState: 1
-    value: 0.74
+    value: 1.59
   color:
     overrideState: 0
     value: {r: 0, g: 0, b: 0, a: 1}
@@ -158,6 +159,32 @@ MonoBehaviour:
   quality:
     overrideState: 0
     value: 2
+--- !u!114 &114356407016812816
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6050e2d5de785ce4d931e4dbdbf2d755, type: 3}
+  m_Name: ChromaticAberration
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  spectralLut:
+    overrideState: 0
+    value: {fileID: 0}
+    defaultState: 1
+  intensity:
+    overrideState: 1
+    value: 0.03
+  fastMode:
+    overrideState: 0
+    value: 0
 --- !u!114 &114449875856229912
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -170,7 +197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a34fa72bd4185749832024e9c8010bf, type: 3}
   m_Name: ScreenSpaceReflections
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   enabled:
     overrideState: 1
     value: 1
@@ -260,16 +287,16 @@ MonoBehaviour:
     value: 0
   saturation:
     overrideState: 1
-    value: 9
+    value: -3
   brightness:
     overrideState: 0
     value: 0
   postExposure:
     overrideState: 1
-    value: 0.3
+    value: 0.8
   contrast:
     overrideState: 1
-    value: 16
+    value: 10.4
   mixerRedOutRedIn:
     overrideState: 0
     value: 100

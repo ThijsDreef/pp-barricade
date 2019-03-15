@@ -9,6 +9,8 @@ public class Field : MonoBehaviour {
     [SerializeField]
     public int cost {get; private set; } = 1;
     public FieldOccupier onField;
+    [SerializeField]
+    private GameObject selectionParticle;
 
     private bool selected ;
     private Color originalColor;
