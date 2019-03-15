@@ -11,7 +11,7 @@ public enum FieldOccupierType {
 
 public abstract class FieldOccupier : MonoBehaviour {
 
-    private Field startField;
+    public Field startField;
 
     [SerializeField]
     public Field currentField {get; protected set; }

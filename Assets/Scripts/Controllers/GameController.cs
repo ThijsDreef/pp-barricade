@@ -16,6 +16,12 @@ public class GameController : MonoBehaviour {
   private GameObject[] startFields = new GameObject[4];
   [SerializeField]
   private GameObject[] spawnPawns = new GameObject[4];
+  [SerializeField]
+  private GameObject fieldHolder;
+  [SerializeField]
+  private GameObject[] unselectableRows;
+
+  public List<Field> selectableFields { get; private set;} = new List<Field>();
   private List<PlayerController> players;
   private MoveController moveController = new MoveController();
   private int currentPlayer;
@@ -27,6 +33,18 @@ public class GameController : MonoBehaviour {
     dice.onDiceRollFinish += this.onDiceRollFinish;
     if (Instance == null) Instance = this;
     else Destroy(this);
+
+    for (int i = 0; i < fieldHolder.transform.childCount; i++) {
+      bool shouldSkip = false;
+      for (int j = 0; j < unselectableRows.Length; j++) {
+        if (fieldHolder.transform.GetChild(i).gameObject == unselectableRows[j]) {
+          shouldSkip = true;
+          break;
+        }
+      }
+      if (shouldSkip) continue;
+      selectableFields.AddRange(fieldHolder.transform.GetChild(i).GetComponentsInChildren<Field>());
+    }
   }
 
   private void onDiceRollFinish(int i) {
@@ -37,12 +55,13 @@ public class GameController : MonoBehaviour {
 
   public void SelectUnit(Pawn unit) {
     moveController.StartPathSelection(unit, currentRol);
+    dice.Respawn();
   }
 
   public void SelectField(Field field) {
     if (targetTypeID == 0) players[currentPlayer].HighlightUnits<SneakyPawn>(false, Color.red);
     else players[currentPlayer].HighlightUnits<HeavyPawn>(false, Color.red);
-    moveController.StartMove(field);
+    moveController.SelectField(field);
   }
 
   public void NextTurn() {
@@ -58,6 +77,7 @@ public class GameController : MonoBehaviour {
       Field[] fields = startFields[i].GetComponentsInChildren<Field>();
       for (int j = 0; j < spawnPawns.Length; j++) {
         Pawn pawn = (Instantiate(spawnPawns[j], fields[j].gameObject.transform.position, Quaternion.identity).GetComponent<Pawn>());
+        pawn.startField = fields[j];
         pawn.MoveToField(fields[j], null);
         pawn.onSelect += SelectUnit;
         players[i].AddUnit(pawn);

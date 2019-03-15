@@ -5,10 +5,14 @@ using UnityEngine;
 public class Field : MonoBehaviour {
     [SerializeField]
     private List<Field> neighbours;
+
+    [SerializeField]
+    public int cost {get; private set; } = 1;
     public FieldOccupier onField;
 
     private bool selected ;
     private Color originalColor;
+
   
  
     private void Start() {

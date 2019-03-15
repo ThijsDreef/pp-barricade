@@ -32,6 +32,7 @@ public class Pawn : FieldOccupier {
 
     public override void EnableHighlight(bool enabled, Color color) {
         selectable = enabled;
+        print(selectable);
         if(enabled == true) highlighter.Play();
         else highlighter.Stop();
     }
