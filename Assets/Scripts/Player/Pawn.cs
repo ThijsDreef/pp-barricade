@@ -13,16 +13,25 @@ public class Pawn : FieldOccupier {
 
     [SerializeField]
     private GameObject highlighterObject;
+    [SerializeField] private ParticleSystemRenderer[] childParticleSystem;
 
     public int Type { get; protected set; }
-    private const float EPESILON = .001f;
+    private const float EPESILON = .00001f;
+
+    [SerializeField]
+    private Material[] selectionMaterialBase;
+    [SerializeField]
+    private Material[] selectionMaterialUpper;
+    [SerializeField]
+    private Material[] selectionMaterialBlob;
 
     public Action<Pawn> onSelect;
     public Action StartMoving;
     public Action StartAttack;
     public Action StopMoving;
-
-    private int movesLeft;
+    
+    //TODO make action
+    public bool lastmove = false;
     private void Start() {
         myType = FieldOccupierType.PLAYER;
     }
@@ -32,10 +41,17 @@ public class Pawn : FieldOccupier {
         StartCoroutine(MoveStep(nextField, callback));
     }
 
-    public override void EnableHighlight(bool enabled, Color color) {
+    public override void EnableHighlight(bool enabled, int color) {
+        SetHighLightColors(color);
         selectable = enabled;
         if(enabled == true) highlighterObject.gameObject.SetActive(true);
         else highlighterObject.gameObject.SetActive(false);
+    }
+
+    public void SetHighLightColors(int currentColor) {
+        childParticleSystem[0].material = selectionMaterialBase[currentColor];
+        childParticleSystem[1].material = selectionMaterialUpper[currentColor];
+        childParticleSystem[2].material = selectionMaterialBlob[currentColor]; 
     }
 
     private void OnMouseDown() {
@@ -50,13 +66,13 @@ public class Pawn : FieldOccupier {
             transform.position =  Vector3.MoveTowards(transform.position, target, (movementSpeed * Time.deltaTime));
             transform.LookAt(target);
             yield return new WaitForEndOfFrame();
-        } while (Vector3.Distance(transform.position,target) >= EPESILON);
+        } while (Vector3.Distance(target, transform.position) >= EPESILON);
         if (currentField) currentField.onField = null;
         currentField = nextField;
         transform.eulerAngles = Vector3.zero;
         callback?.Invoke();
-        if (movesLeft == 0) {
-            StopMoving?.Invoke();
+        if (lastmove) {
+            StopMoving();
         }
     }
 }

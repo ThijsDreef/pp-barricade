@@ -20,7 +20,6 @@ public class GameController : MonoBehaviour {
   private GameObject fieldHolder = null;
   [SerializeField]
   private GameObject[] unselectableRows = new GameObject[0];
-
   public List<Field> selectableFields { get; private set;} = new List<Field>();
   private List<PlayerController> players;
   private MoveController moveController = new MoveController();
@@ -49,8 +48,8 @@ public class GameController : MonoBehaviour {
 
   private void onDiceRollFinish(int i) {
     currentRol = i;
-    if (targetTypeID == 0) players[currentPlayer].HighlightUnits<SneakyPawn>(true, Color.red);
-    else players[currentPlayer].HighlightUnits<HeavyPawn>(true, Color.red);
+    if (targetTypeID == 0) players[currentPlayer].HighlightUnits<SneakyPawn>(true, currentPlayer);
+    else players[currentPlayer].HighlightUnits<HeavyPawn>(true, currentPlayer);
   }
 
   public void SelectUnit(Pawn unit) {
@@ -59,8 +58,8 @@ public class GameController : MonoBehaviour {
   }
 
   public void SelectField(Field field) {
-    if (targetTypeID == 0) players[currentPlayer].HighlightUnits<SneakyPawn>(false, Color.red);
-    else players[currentPlayer].HighlightUnits<HeavyPawn>(false, Color.red);
+    if (targetTypeID == 0) players[currentPlayer].HighlightUnits<SneakyPawn>(false, currentPlayer);
+    else players[currentPlayer].HighlightUnits<HeavyPawn>(false, currentPlayer);
     moveController.SelectField(field);
   }
 
@@ -98,5 +97,5 @@ public class GameController : MonoBehaviour {
     dice.Roll(data); 
     targetTypeID = data.id;
     menuController.EnableMenu(2);
-  } 
+  }
 }
