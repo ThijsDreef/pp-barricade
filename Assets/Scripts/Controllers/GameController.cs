@@ -64,6 +64,8 @@ public class GameController : MonoBehaviour {
   }
 
   public void NextTurn() {
+    if (targetTypeID == 0) players[currentPlayer].HighlightUnits<SneakyPawn>(false, currentPlayer);
+    else players[currentPlayer].HighlightUnits<HeavyPawn>(false, currentPlayer);
     currentPlayer += 1;
     currentPlayer %= players.Count;
     StartTurn(currentPlayer);
