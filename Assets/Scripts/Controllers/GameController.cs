@@ -48,6 +48,7 @@ public class GameController : MonoBehaviour {
 
   private void onDiceRollFinish(int i) {
     currentRol = i;
+    if (i == 0) NextTurn();
     if (targetTypeID == 0) players[currentPlayer].HighlightUnits<SneakyPawn>(true, currentPlayer);
     else players[currentPlayer].HighlightUnits<HeavyPawn>(true, currentPlayer);
   }
