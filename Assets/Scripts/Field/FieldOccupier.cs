@@ -20,7 +20,7 @@ public abstract class FieldOccupier : MonoBehaviour {
 
     public FieldOccupierType myType {get; protected set; }
 
-    public abstract void EnableHighlight(bool enabled, int color);
+    public abstract void EnableHighlight(bool enabled, Color color);
     /// <summary> all fieldOccupiers must implement this function to move to fields </summary>
     public abstract void MoveToField(Field nextField, Action callback);
 }

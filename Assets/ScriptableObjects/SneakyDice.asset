@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9c8fa327eaa62349a1010ad5d623ba4, type: 3}
   m_Name: SneakyDice
   m_EditorClassIdentifier: 
-  diceNumbers: 080000000300000001000000070000000500000000000000
+  diceNumbers: 080000000300000000000000070000000500000000000000
   id: 0
   material: {fileID: 2100000, guid: 1424a27ca65383b4c89e9d78f6695172, type: 2}

@@ -17,7 +17,7 @@ public class Barier : FieldOccupier {
         callback?.Invoke();
     }
 
-    public override void EnableHighlight(bool enabled, int color) {
+    public override void EnableHighlight(bool enabled, Color color) {
         selectable = enabled;
         if(enabled == true) highlighter.Play();
         else highlighter.Stop();

@@ -7,12 +7,12 @@ public class PlayerController {
   private List<Pawn> units;
   private const int UNITTYPES = 2;
   private const int UNITAMOUNT = 2;
-  
+
   public PlayerController() {
     units = new List<Pawn>();
   }
   
-  public void HighlightUnits<T>(bool enabled, int color) where T : class {
+  public void HighlightUnits<T>(bool enabled, Color color) where T : class {
     for (int i = 0; i < units.Count; i++) {
       if (units[i] is T) {
         units[i].EnableHighlight(enabled, color);

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9c8fa327eaa62349a1010ad5d623ba4, type: 3}
   m_Name: HeavyDice
   m_EditorClassIdentifier: 
-  diceNumbers: 030000000500000001000000040000000200000003000000
+  diceNumbers: 030000000500000002000000040000000200000003000000
   id: 1
   material: {fileID: 2100000, guid: c66ba04d193e05e47ad2aaf700c3d645, type: 2}
