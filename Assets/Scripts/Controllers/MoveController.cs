@@ -100,8 +100,7 @@ class MoveController {
         StartMoveBarier(lastField.onField);
         break;
     }
-    
-    currentPawn.currentField.onField = null;
+    // currentPawn.currentField.onField = null;
     lastField.onField = currentPawn;
   }
 
