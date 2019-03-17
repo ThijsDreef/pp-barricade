@@ -11,6 +11,7 @@ class MoveController {
   private FieldOccupier currentBarier;
   private int currentMoves;
   private bool barierMove = false;
+  
 
   public void SelectField(Field field) {
     if (barierMove) {
@@ -33,7 +34,7 @@ class MoveController {
     for (int i = 0 ; i < GameController.Instance.selectableFields.Count; i++) {
       Field field = GameController.Instance.selectableFields[i];
       if (field.GetOnFieldType() == FieldOccupierType.EMPTY) {
-        field.HighLight(true, Color.red);
+        field.BarricadeHighLight(true, Color.red);
       }
     }
   }
@@ -59,11 +60,12 @@ class MoveController {
     barierMove = false;
     for (int i = 0 ; i < GameController.Instance.selectableFields.Count; i++) {
       Field f = GameController.Instance.selectableFields[i];
-      f.HighLight(false, Color.red);
+      f.BarricadeHighLight(false, Color.red);
     }
   }
 
   private void ResumePathSelection(bool hasHitBarier) {
+    currentPawn.lastmove = true;
     if (hasHitBarier) movedFields = new HashSet<Field>();
     selectableFields = new List<Field>();
     for (int i = 0; i < currentPawn.currentField.Neighbours.Count; i++) {
@@ -88,7 +90,7 @@ class MoveController {
   }
 
   public void OnLastTile(Field lastField) {
-    
+        currentPawn.lastmove = true;
     switch (lastField.GetOnFieldType()) {
       case FieldOccupierType.PLAYER: 
         if (lastField.onField == currentPawn) break;
@@ -104,13 +106,13 @@ class MoveController {
   }
 
   private void StartRecursiveMove(Field field) {
+    currentPawn.lastmove = false;
     movedFields.Add(currentPawn.currentField);
     currentPawn.MoveToField(field, CheckNextField);
     if (field.cost != 0 && currentMoves == 1) {
       OnLastTile(field);
     }
     currentMoves -= field.cost;
-
   }
 
   private void CheckNextField() {
@@ -133,6 +135,7 @@ class MoveController {
 
     if (possibleTargets.Count != 1) {
       ResumePathSelection(hitBarricade);
+      //Idle animation start
       return;
     }
     target = currentPawn.currentField.Neighbours[temp];

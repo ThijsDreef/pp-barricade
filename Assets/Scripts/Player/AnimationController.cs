@@ -13,14 +13,26 @@ public class AnimationController : MonoBehaviour {
     }
 
     private void StartmoveAnim() {
-        animator.SetTrigger("Walk");
+        //animator.SetTrigger("Walk");
+        animator.SetBool("IDLE", false);
+        animator.SetBool("WALKING", true);
     }
 
     private void StartIdleAnim() {
-        animator.SetTrigger("Idle");
+        //animator.SetTrigger("Idle");
+        animator.SetBool("IDLE", true);
+        animator.SetBool("WALKING", false);
     }
 
     private void StartAttackAnim() {
         animator.SetTrigger("Attack");
+    }
+
+    private void PauseAnim() {
+        animator.enabled = false;
+    }
+
+    private void ResumeAnim() {
+        animator.enabled = true;
     }
 }
