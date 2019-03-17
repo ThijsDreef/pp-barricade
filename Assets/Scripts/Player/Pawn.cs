@@ -56,6 +56,7 @@ public class Pawn : FieldOccupier {
 
     private void OnMouseDown() {
         if (selectable) onSelect?.Invoke(this);
+        else if (currentField) currentField.OnMouseDown();
     }
     
     /// <summary>coroutine for iterating current GameObject position and rotation to nextField position and moving direction.</summary>
@@ -67,7 +68,7 @@ public class Pawn : FieldOccupier {
             transform.LookAt(target);
             yield return new WaitForEndOfFrame();
         } while (Vector3.Distance(target, transform.position) >= EPESILON);
-        if (currentField) currentField.onField = null;
+        if (currentField && currentField.onField == this) currentField.onField = null;
         currentField = nextField;
         transform.eulerAngles = Vector3.zero;
         callback?.Invoke();

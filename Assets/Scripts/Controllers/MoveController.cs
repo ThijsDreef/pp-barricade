@@ -45,6 +45,10 @@ class MoveController {
     ResetSelectableFields();
     movedFields = new HashSet<Field>();
     selectableFields = new List<Field>();
+    if (currentMoves == 0) {
+      GameController.Instance.NextTurn();
+      return;
+    }
     for (int i = 0; i < pawn.currentField.Neighbours.Count; i++) {
       Field fieldToAdd = pawn.currentField.Neighbours[i];
       if (fieldToAdd.GetOnFieldType() == FieldOccupierType.BARRICADE && currentMoves != 1) continue;
@@ -100,8 +104,7 @@ class MoveController {
         StartMoveBarier(lastField.onField);
         break;
     }
-    
-    currentPawn.currentField.onField = null;
+    // currentPawn.currentField.onField = null;
     lastField.onField = currentPawn;
   }
 
