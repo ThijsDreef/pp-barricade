@@ -79583,6 +79583,42 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7243509549031883852, guid: d9388519d7c53ab49bbc846d17063a91,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243509549031883852, guid: d9388519d7c53ab49bbc846d17063a91,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243509549031883852, guid: d9388519d7c53ab49bbc846d17063a91,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243509549031883852, guid: d9388519d7c53ab49bbc846d17063a91,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1277858850}
+    - target: {fileID: 7243509549031883852, guid: d9388519d7c53ab49bbc846d17063a91,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RollDiceForCurrentPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243509549031883852, guid: d9388519d7c53ab49bbc846d17063a91,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: DiceData, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243509549031883852, guid: d9388519d7c53ab49bbc846d17063a91,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: bc57c0c8171ab7248876e165c516ae81,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9388519d7c53ab49bbc846d17063a91, type: 3}
 --- !u!1 &1607876981
