@@ -23,24 +23,22 @@ public class Sound
     {
         source = _source;
         int randomNumber = Random.Range(0, clip.Length);
-        if(clip.Length != 0)
-        {
+        if(clip.Length != 0) {
             source.clip = clip[randomNumber];
-        }
-        else
-        {
+        } else {
             Debug.Log("no sound");
         }
     }
 
     public void Play()
     {
-        if(clip.Length > 1)
-        {
-            SetSource(source);
+        if(!source.isPlaying) {
+            if(clip.Length > 1) {
+                SetSource(source);
+            }
+            source.pitch = pitch + Random.Range(-0.1f,0.1f);
+            source.volume = volume;
+            source.Play();
         }
-        source.pitch = pitch + Random.Range(-0.1f,0.1f);
-        source.volume = volume;
-        source.Play();
     }
 }
