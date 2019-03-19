@@ -11,11 +11,17 @@ public class GameController : MonoBehaviour {
   [SerializeField]
   private DiceController dice = null;
   [SerializeField]
-  private Text currentPlayerText = null;
+  private Image currentPlayerBulkyImage = null;
+  [SerializeField]
+  private Image currentPlayerSneakyImage = null;
   [SerializeField]
   private GameObject[] startFields = new GameObject[4];
   [SerializeField]
   private GameObject[] spawnPawns = new GameObject[4];
+  [SerializeField]
+  private Sprite[] fatSelect = new Sprite[4];
+  [SerializeField]
+  private Sprite[] skinnySelect = new Sprite[4];
   [SerializeField]
   private GameObject fieldHolder = null;
   [SerializeField]
@@ -48,6 +54,10 @@ public class GameController : MonoBehaviour {
       if (shouldSkip) continue;
       selectableFields.AddRange(fieldHolder.transform.GetChild(i).GetComponentsInChildren<Field>());
     }
+  }
+
+  public void EndGame() {
+    menuController.EnableMenu(6);
   }
 
   private void onDiceRollFinish(int i) {
@@ -91,7 +101,7 @@ public class GameController : MonoBehaviour {
         Renderer[] rend;
             rend = pawn.GetComponentsInChildren<Renderer>();
             foreach(Renderer renderer in rend) {
-            renderer.material = fatPlayerMaterials[i];
+              renderer.material = fatPlayerMaterials[i];
             }
         }
 
@@ -114,7 +124,10 @@ public class GameController : MonoBehaviour {
   private void StartTurn(int i) {
     currentPlayer = i;
     menuController.EnableMenu(5);
-    currentPlayerText.text = "Next Up Player: " + (currentPlayer + 1);
+        currentPlayerBulkyImage.sprite = fatSelect[currentPlayer];
+        currentPlayerSneakyImage.sprite = skinnySelect[currentPlayer];
+    //currentPlayerText.text = "Next Up Player: " + (currentPlayer + 1);
+    
   }
 
   public void RollDiceForCurrentPlayer(DiceData data) {
