@@ -87,7 +87,7 @@ public class GameController : MonoBehaviour {
     else players[currentPlayer].HighlightUnits<HeavyPawn>(false, currentPlayer);
     currentPlayer += 1;
     currentPlayer %= players.Count;
-    StartTurn(currentPlayer);
+    StartCoroutine(StartTurn(currentPlayer, 1f));
   }
 
   public void StartGame(int playerAmount) {
@@ -118,14 +118,15 @@ public class GameController : MonoBehaviour {
         players[i].AddUnit(pawn);
       }
     }
-    StartTurn(0);
+   StartCoroutine(StartTurn(0, 0f));
   }
 
-  private void StartTurn(int i) {
+  private IEnumerator StartTurn(int i, float delay) {
+    yield return new WaitForSeconds(delay);
     currentPlayer = i;
     menuController.EnableMenu(5);
-        currentPlayerBulkyImage.sprite = fatSelect[currentPlayer];
-        currentPlayerSneakyImage.sprite = skinnySelect[currentPlayer];
+    currentPlayerBulkyImage.sprite = fatSelect[currentPlayer];
+    currentPlayerSneakyImage.sprite = skinnySelect[currentPlayer];
     //currentPlayerText.text = "Next Up Player: " + (currentPlayer + 1);
     
   }
