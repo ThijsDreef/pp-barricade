@@ -27,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4911366575279223234}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.58019704, y: 0.06178518, z: 0.58019704}
   m_Children:
@@ -94,6 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   neighbours: []
+  cost: 1
   onField: {fileID: 0}
   selectionParticle: {fileID: 2017439143585962610}
   barricadeParticle: {fileID: 7268586227598442232}

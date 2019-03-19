@@ -69,8 +69,8 @@ public class CameraController : MonoBehaviour {
             velocityX = transform.rotation.eulerAngles.x;
             velocityY = transform.rotation.eulerAngles.y;
             transform.rotation = Quaternion.Euler(velocityX, velocityY, 0);
-           finalX = ClampAngle(velocityX, xMinLimit, xMaxLimit);
-           finalY = ClampAngle(velocityY, xMinLimit, xMaxLimit);
+           //finalX = ClampAngle(velocityX, xMinLimit, xMaxLimit);
+           //finalY = ClampAngle(velocityY, xMinLimit, xMaxLimit);
             //transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(velocityX, velocityY, 0), Time.time * .01f);
         }
     }

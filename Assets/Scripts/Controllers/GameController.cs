@@ -20,6 +20,10 @@ public class GameController : MonoBehaviour {
   private GameObject fieldHolder = null;
   [SerializeField]
   private GameObject[] unselectableRows = new GameObject[0];
+  [SerializeField]
+  private Material[] fatPlayerMaterials;
+  [SerializeField]
+  private Material[] sneakyGuyMaterials;
   public List<Field> selectableFields { get; private set;} = new List<Field>();
   private List<PlayerController> players;
   private MoveController moveController = new MoveController();
@@ -83,9 +87,22 @@ public class GameController : MonoBehaviour {
       Field[] fields = startFields[i].GetComponentsInChildren<Field>();
       for (int j = 0; j < spawnPawns.Length; j++) {
         Pawn pawn = (Instantiate(spawnPawns[j], fields[j].gameObject.transform.position, Quaternion.identity).GetComponent<Pawn>());
-        pawn.startField = fields[j];
-        
+        if(j < 2) {
+        Renderer[] rend;
+            rend = pawn.GetComponentsInChildren<Renderer>();
+            foreach(Renderer renderer in rend) {
+            renderer.material = fatPlayerMaterials[i];
+            }
+        }
 
+        if(j >= 2) {
+        Renderer[] rend;
+        rend = pawn.GetComponentsInChildren<Renderer>();
+        foreach (Renderer renderer in rend) {
+        renderer.material = sneakyGuyMaterials[i];
+            }
+        }
+        pawn.startField = fields[j];
         pawn.MoveToField(fields[j], null);
         pawn.onSelect += SelectUnit;
         players[i].AddUnit(pawn);
