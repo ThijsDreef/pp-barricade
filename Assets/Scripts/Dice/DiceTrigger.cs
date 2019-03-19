@@ -9,7 +9,9 @@ public class DiceTrigger : MonoBehaviour
     public Action<int> onDiceNumberSet;
 
     /// Sends through data on wich side it landed. 
-    public void OnTriggerEnter() {
-        onDiceNumberSet(diceSideNumber);
+    public void OnTriggerEnter(Collider other) {
+        if(other.CompareTag("Ground")) {
+            onDiceNumberSet(diceSideNumber);
+        }
     }
 }

@@ -9,14 +9,10 @@ public class SoundManager : MonoBehaviour
     public static SoundManager Instance;
 
     public Sound[] sounds;
-    private void Awake()
-    {
-        if (Instance != null)
-        {
+    private void Awake() {
+        if (Instance != null) {
             Destroy(gameObject);
-        }
-        else
-        {
+        } else {
             Instance = this;
         }
     }
@@ -26,8 +22,7 @@ public class SoundManager : MonoBehaviour
     }
 
     private void AudioSourcesCreator() {
-        for (int i = 0; i < sounds.Length; i++)
-        {
+        for (int i = 0; i < sounds.Length; i++) {
             GameObject _go = new GameObject("Sound_" + i + "_" + sounds[i].soundName);
             _go.transform.SetParent(this.transform);
             AudioSource audioSource = _go.AddComponent<AudioSource>();
@@ -36,12 +31,9 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    public void PlaySound(string _soundName)
-    {
-        for (int i = 0; i < sounds.Length; i++)
-        {
-            if (sounds[i].soundName == _soundName)
-            {
+    public void PlaySound(string _soundName) {
+        for (int i = 0; i < sounds.Length; i++) {
+            if (sounds[i].soundName == _soundName) {
                 StartCoroutine(Delay(i, sounds[i].delay));
                 return;
             }
@@ -50,8 +42,7 @@ public class SoundManager : MonoBehaviour
         Debug.LogWarning("AudioManager: Sound not found in list. " + _soundName);
     }
 
-    private IEnumerator Delay(int index, float delayTime)
-    {
+    private IEnumerator Delay(int index, float delayTime) {
         yield return new WaitForSeconds(delayTime);
         sounds[index].Play();
     }
