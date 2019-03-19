@@ -64111,6 +64111,7 @@ GameObject:
   - component: {fileID: 1157106352}
   - component: {fileID: 1157106351}
   - component: {fileID: 1157106350}
+  - component: {fileID: 1157106355}
   m_Layer: 8
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -64259,6 +64260,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 52.378002, y: 0, z: 0}
+--- !u!114 &1157106355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157106349}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2421e769c023e1448820ab307b70e129, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  freeCam: 1
+  minZoomFOV: 5
+  maxZoomFOV: 45
+  beginPos: {x: 0, y: 0, z: 0}
+  zoomSensitivity: 13
+  fov: 0
+  velocityX: 0
+  velocityY: 0
+  finalX: 0
+  finalY: 0
+  xSpeed: 20
+  ySpeed: 20
+  yMinLimit: -80
+  yMaxLimit: 80
+  xMinLimit: -100
+  xMaxLimit: 100
+  smoothTime: 2
+  rotationYAxis: 0
+  rotationXAxis: 0
 --- !u!1001 &1163430649
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -93394,6 +93426,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 560232686093698973, guid: 493d76c3a7f1b8f4393eb63c9d297fc3,
         type: 3}
+      propertyPath: fatPlayerprefabs.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 560232686093698973, guid: 493d76c3a7f1b8f4393eb63c9d297fc3,
+        type: 3}
+      propertyPath: fatPlayerMaterials.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 560232686093698973, guid: 493d76c3a7f1b8f4393eb63c9d297fc3,
+        type: 3}
+      propertyPath: sneakyGuyMaterials.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 560232686093698973, guid: 493d76c3a7f1b8f4393eb63c9d297fc3,
+        type: 3}
       propertyPath: menuController
       value: 
       objectReference: {fileID: 1010085937}
@@ -93486,6 +93533,46 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1015872563, guid: eaa7e60efbe34224994d044abd29e59c,
         type: 3}
+    - target: {fileID: 560232686093698973, guid: 493d76c3a7f1b8f4393eb63c9d297fc3,
+        type: 3}
+      propertyPath: sneakyGuyMaterials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 60687f672e557324695dcc1098af69fc, type: 2}
+    - target: {fileID: 560232686093698973, guid: 493d76c3a7f1b8f4393eb63c9d297fc3,
+        type: 3}
+      propertyPath: sneakyGuyMaterials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: fd5e43d060a85804c91a53494ae1befa, type: 2}
+    - target: {fileID: 560232686093698973, guid: 493d76c3a7f1b8f4393eb63c9d297fc3,
+        type: 3}
+      propertyPath: sneakyGuyMaterials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8597e376a549d804e9bde960c6ef82e1, type: 2}
+    - target: {fileID: 560232686093698973, guid: 493d76c3a7f1b8f4393eb63c9d297fc3,
+        type: 3}
+      propertyPath: sneakyGuyMaterials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: c98640bdb3aba4c42b3a8d5453de6f76, type: 2}
+    - target: {fileID: 560232686093698973, guid: 493d76c3a7f1b8f4393eb63c9d297fc3,
+        type: 3}
+      propertyPath: fatPlayerMaterials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d04b1d1d4420c3f469008d47484bccfd, type: 2}
+    - target: {fileID: 560232686093698973, guid: 493d76c3a7f1b8f4393eb63c9d297fc3,
+        type: 3}
+      propertyPath: fatPlayerMaterials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1241dfa140215a4408dcb244a5670708, type: 2}
+    - target: {fileID: 560232686093698973, guid: 493d76c3a7f1b8f4393eb63c9d297fc3,
+        type: 3}
+      propertyPath: fatPlayerMaterials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: edd05ac1e72f63d4bbef429d4ea43230, type: 2}
+    - target: {fileID: 560232686093698973, guid: 493d76c3a7f1b8f4393eb63c9d297fc3,
+        type: 3}
+      propertyPath: fatPlayerMaterials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0559c2e975bbff045bbba71c420adad2, type: 2}
     - target: {fileID: 560232686093698974, guid: 493d76c3a7f1b8f4393eb63c9d297fc3,
         type: 3}
       propertyPath: m_LocalPosition.x
