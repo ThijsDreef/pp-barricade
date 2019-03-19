@@ -574,8 +574,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeff6867474d0d349a3b241bdc0794a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upForce: 600
-  forwardForce: 600
+  upForce: -600
+  forwardForce: 0
   timeTillFade: 0
   diceData: {fileID: 11400000, guid: 9fd98bd1b15c07f4e9853ffdc7d6e0dc, type: 2}
   rb: {fileID: 428614614088263756}
