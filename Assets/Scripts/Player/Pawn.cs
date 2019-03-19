@@ -55,8 +55,13 @@ public class Pawn : FieldOccupier {
     }
 
     private void OnMouseDown() {
-        if (selectable) onSelect?.Invoke(this);
-        else if (currentField) currentField.OnMouseDown();
+        if (selectable) {
+            onSelect?.Invoke(this);
+            SoundManager.Instance.PlaySound("Select");
+        } else if (currentField) {
+            SoundManager.Instance.PlaySound("Select");
+            currentField.OnMouseDown();
+        }
     }
     
     /// <summary>coroutine for iterating current GameObject position and rotation to nextField position and moving direction.</summary>
@@ -67,6 +72,7 @@ public class Pawn : FieldOccupier {
             transform.position =  Vector3.MoveTowards(transform.position, target, (movementSpeed * Time.deltaTime));
             transform.LookAt(target);
             yield return new WaitForEndOfFrame();
+            SoundManager.Instance.PlaySound("Walk");
         } while (Vector3.Distance(target, transform.position) >= EPESILON);
         if (currentField && currentField.onField == this) currentField.onField = null;
         currentField = nextField;

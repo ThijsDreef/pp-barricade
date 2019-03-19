@@ -14,6 +14,7 @@ public class Barier : FieldOccupier {
     public override void MoveToField(Field nextField, Action callback) {
         currentField = nextField;
         transform.position = nextField.transform.position + new Vector3(0, 0.5f, 0);
+        SoundManager.Instance.PlaySound("Barricade");
         callback?.Invoke();
     }
 
