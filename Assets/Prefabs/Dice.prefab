@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2967909}
   - component: {fileID: 2967907}
   - component: {fileID: 2967908}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Side1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79,7 +79,7 @@ GameObject:
   - component: {fileID: 75805843}
   - component: {fileID: 75805841}
   - component: {fileID: 75805842}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Side5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 282257197}
   - component: {fileID: 282257195}
   - component: {fileID: 282257196}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Side2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -213,7 +213,7 @@ GameObject:
   - component: {fileID: 1428176811}
   - component: {fileID: 1428176809}
   - component: {fileID: 1428176810}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Side4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -279,7 +279,7 @@ GameObject:
   - component: {fileID: 1603920916}
   - component: {fileID: 1603920917}
   - component: {fileID: 1603920918}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: DiceSound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -337,7 +337,7 @@ GameObject:
   - component: {fileID: 1757138977}
   - component: {fileID: 1757138975}
   - component: {fileID: 1757138976}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Side3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -404,7 +404,7 @@ GameObject:
   - component: {fileID: 2056466724}
   - component: {fileID: 2056466722}
   - component: {fileID: 2056466723}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Side6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -473,7 +473,7 @@ GameObject:
   - component: {fileID: 428614614088263756}
   - component: {fileID: 603240009}
   - component: {fileID: 603240008}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Dice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
