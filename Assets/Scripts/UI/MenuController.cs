@@ -8,6 +8,7 @@ public class MenuController : MonoBehaviour {
     public Material blur;
 
     private GameObject menusContainer;
+    private int previousMenu, currentMenu = 0;
 
     // setup menu container and set the first menu as default menu
     private void Start() {
@@ -25,18 +26,23 @@ public class MenuController : MonoBehaviour {
 
     /// <summary> enables the menu with the right ID </summary>
     public void EnableMenu(int menuID) {
+        previousMenu = currentMenu;
+        currentMenu = menuID;
         foreach (var menu in Menus) {
             if(menu != null) {
                 menu.SetActive(false);
             }
         }
 
-        if (Menus[menuID] != null) {
-            Menus[menuID].SetActive(true);
-        }
-        else {
+        if (Menus[currentMenu] != null) {
+            Menus[currentMenu].SetActive(true);
+        } else {
             Menus[0].SetActive(true);
         }
+    }
+
+    public void Back() {
+        EnableMenu(previousMenu);
     }
 
     public void ToggleBlur(bool status)

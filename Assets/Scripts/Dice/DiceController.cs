@@ -12,6 +12,7 @@ public class DiceController : MonoBehaviour
     private int upForce = 600, forwardForce = 600;
     [SerializeField]
     private int timeTillFade;
+    private bool queue = false;
     private const float START_DISSOLVE_POINT = 0f;
     private float currentDissolve;
     public DiceData diceData;
@@ -49,11 +50,13 @@ public class DiceController : MonoBehaviour
             currentDissolve -= 0.01f;
             dissolveMaterial.SetFloat("_DissolveY", currentDissolve);
             StartCoroutine(Dissolve());
-         }
-         else {
-            transform.position = spawnLocation.position;
-            dissolveMaterial.SetFloat("_DissolveY", START_DISSOLVE_POINT);
+         } else {
             rb.useGravity = false;
+            if(queue) {
+                isThrown = false;
+                queue = false;
+                Roll(diceData);
+            }
          }
     }
 
@@ -68,21 +71,22 @@ public class DiceController : MonoBehaviour
         diceSideNumber = i;
     }
 
-    /// <summary> Activate to roll the dice with the given dice data. </summary>
+    /// <summary> Activate to roll the dice with the given dice data, if still in progress it will stay in a queue. </summary>
     public void Roll(DiceData diceData) {
         renderer.material = diceData.material;
         dissolveMaterial = diceData.material;
+        this.diceData = diceData;
         if(!isThrown) {
-            rb.useGravity = true;
             isThrown = true;
-            this.diceData = diceData;
             Move();
-        }
-        
+        } else { queue = true; }        
     }
 
     // Moves the game object to the field and rotates it randomly.
     private void Move() {
+        dissolveMaterial.SetFloat("_DissolveY", START_DISSOLVE_POINT);
+        transform.position = spawnLocation.position;
+        rb.useGravity = true;
         rb.AddTorque(UnityEngine.Random.Range(0,500), UnityEngine.Random.Range(0,500), UnityEngine.Random.Range(0,500));
         rb.AddForce(Vector3.up * upForce + Vector3.back * forwardForce);
     }
