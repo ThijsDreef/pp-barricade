@@ -35,7 +35,7 @@
         }
     },
     "texturesets": {
-        "Sneaky": {
+        "heavy": {
             "shader": "Main shader"
         }
     }
