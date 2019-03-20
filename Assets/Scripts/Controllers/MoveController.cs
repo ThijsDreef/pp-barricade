@@ -119,6 +119,10 @@ class MoveController {
   }
 
   private void CheckNextField() {
+    if (currentPawn.currentField.Neighbours.Count == 0) {
+        GameController.Instance.EndGame();
+        return;
+    }
     if (currentMoves <= 0) {
       if (!barierMove) GameController.Instance.NextTurn();
       return;

@@ -11,15 +11,25 @@ public class GameController : MonoBehaviour {
   [SerializeField]
   private DiceController dice = null;
   [SerializeField]
-  private Text currentPlayerText = null;
+  private Image currentPlayerBulkyImage = null;
+  [SerializeField]
+  private Image currentPlayerSneakyImage = null;
   [SerializeField]
   private GameObject[] startFields = new GameObject[4];
   [SerializeField]
   private GameObject[] spawnPawns = new GameObject[4];
   [SerializeField]
+  private Sprite[] fatSelect = new Sprite[4];
+  [SerializeField]
+  private Sprite[] skinnySelect = new Sprite[4];
+  [SerializeField]
   private GameObject fieldHolder = null;
   [SerializeField]
   private GameObject[] unselectableRows = new GameObject[0];
+  [SerializeField]
+  private Material[] fatPlayerMaterials;
+  [SerializeField]
+  private Material[] sneakyGuyMaterials;
   public List<Field> selectableFields { get; private set;} = new List<Field>();
   private List<PlayerController> players;
   private MoveController moveController = new MoveController();
@@ -44,6 +54,10 @@ public class GameController : MonoBehaviour {
       if (shouldSkip) continue;
       selectableFields.AddRange(fieldHolder.transform.GetChild(i).GetComponentsInChildren<Field>());
     }
+  }
+
+  public void EndGame() {
+    menuController.EnableMenu(6);
   }
 
   private void onDiceRollFinish(int i) {
@@ -73,7 +87,7 @@ public class GameController : MonoBehaviour {
     else players[currentPlayer].HighlightUnits<HeavyPawn>(false, currentPlayer);
     currentPlayer += 1;
     currentPlayer %= players.Count;
-    StartTurn(currentPlayer);
+    StartCoroutine(StartTurn(currentPlayer, 1f));
   }
 
   public void StartGame(int playerAmount) {
@@ -83,21 +97,38 @@ public class GameController : MonoBehaviour {
       Field[] fields = startFields[i].GetComponentsInChildren<Field>();
       for (int j = 0; j < spawnPawns.Length; j++) {
         Pawn pawn = (Instantiate(spawnPawns[j], fields[j].gameObject.transform.position, Quaternion.identity).GetComponent<Pawn>());
-        pawn.startField = fields[j];
-        
+        if(j < 2) {
+        Renderer[] rend;
+            rend = pawn.GetComponentsInChildren<Renderer>();
+            foreach(Renderer renderer in rend) {
+              renderer.material = fatPlayerMaterials[i];
+            }
+        }
 
+        if(j >= 2) {
+        Renderer[] rend;
+        rend = pawn.GetComponentsInChildren<Renderer>();
+        foreach (Renderer renderer in rend) {
+        renderer.material = sneakyGuyMaterials[i];
+            }
+        }
+        pawn.startField = fields[j];
         pawn.MoveToField(fields[j], null);
         pawn.onSelect += SelectUnit;
         players[i].AddUnit(pawn);
       }
     }
-    StartTurn(0);
+   StartCoroutine(StartTurn(0, 0f));
   }
 
-  private void StartTurn(int i) {
+  private IEnumerator StartTurn(int i, float delay) {
+    yield return new WaitForSeconds(delay);
     currentPlayer = i;
     menuController.EnableMenu(5);
-    currentPlayerText.text = "Next Up Player: " + (currentPlayer + 1);
+    currentPlayerBulkyImage.sprite = fatSelect[currentPlayer];
+    currentPlayerSneakyImage.sprite = skinnySelect[currentPlayer];
+    //currentPlayerText.text = "Next Up Player: " + (currentPlayer + 1);
+    
   }
 
   public void RollDiceForCurrentPlayer(DiceData data) {
