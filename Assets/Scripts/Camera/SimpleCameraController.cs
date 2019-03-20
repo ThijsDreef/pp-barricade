@@ -4,6 +4,8 @@ namespace UnityTemplateProjects
 {
     public class SimpleCameraController : MonoBehaviour
     {
+        public Vector3 startPos;
+        public Quaternion startRot;
         class CameraState
         {
             public float yaw;
@@ -106,8 +108,8 @@ namespace UnityTemplateProjects
             return direction;
         }
         
-        void Update()
-        {
+        void Update() {
+
             // Exit Sample  
             if (Input.GetKey(KeyCode.Escape))
             {
@@ -163,6 +165,11 @@ namespace UnityTemplateProjects
             m_InterpolatingCameraState.LerpTowards(m_TargetCameraState, positionLerpPct, rotationLerpPct);
 
             m_InterpolatingCameraState.UpdateTransform(transform);
+        }
+
+        public void Start() {
+            startPos = transform.position;
+            startRot = transform.rotation;
         }
     }
 
