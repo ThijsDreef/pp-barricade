@@ -6,7 +6,8 @@
         _OcclusionMap("Occlusion", 2D) = "white" {}
         _OcclusionIntensity("Occlussion Intensity", Float) = 0
         _BumpMap("Normal Map", 2D) = "bump" {}
-		_EmissionMap("EmmisionMap", 2D) = "white"
+		_EmissionMap("EmmisionMap", 2D) = "white" {}
+        _EmissionColor("Emission Color", Color) = (0, 0, 0, 0)
         _DissolveTexture("Disolve Texture", 2D) = "white" {}
         _DissolveY("Current Y of the disolve effect", Float) = 0
         _DissolveSize("Size of the effect", Float) = 2
@@ -42,6 +43,7 @@
 
             sampler2D _MainTex;
 			sampler2D _EmissionMap;
+            float4 _EmissionColor;
             sampler2D _OcclusionMap;
             float _OcclusionIntensity;
             sampler2D _BumpMap;
@@ -76,13 +78,14 @@
 
                 float transition = _DissolveY / 5;
                 clip(_StartingY + (transition + (tex2D(_DissolveTexture, i.uv)) * _DissolveSize));
-				fixed4 o = _Glow * tex2D(_EmissionMap, i.uv).r;
+				fixed4 o = tex2D(_EmissionMap, i.uv);
+                half glow = o.r * _Glow;
                 fixed3 baseColor = tex2D(_MainTex, i.uv).rgb;
                 fixed occlusion = tex2D(_OcclusionMap, i.uv).r;
                 c.rgb *= baseColor;
                 c.rgb *= (occlusion * _OcclusionIntensity);
                 c *= i.diff;
-				c += o;
+				c += glow * o * _EmissionColor;
                 
                 return c;
             }
