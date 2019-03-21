@@ -10,6 +10,9 @@ public class Pawn : FieldOccupier {
     private float movementSpeed = 0;
     [SerializeField]
     private float yOffset = .55f;
+    [SerializeField]
+    private AnimationController animController;
+    public AnimationController AnimController { get { return animController; } set { AnimController = value; } }
 
     [SerializeField]
     private GameObject highlighterObject;
@@ -34,6 +37,7 @@ public class Pawn : FieldOccupier {
     public bool lastmove = false;
     private void Start() {
         myType = FieldOccupierType.PLAYER;
+        animController = GetComponent<AnimationController>();
     }
 
     /// <summary>starts a coroutine that makes the GameObject move to nextField.</summary>

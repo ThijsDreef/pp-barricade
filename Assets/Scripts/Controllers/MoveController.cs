@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.UI;
+using System;
+using UnityEngine;
 
 class MoveController {
 
@@ -11,7 +12,7 @@ class MoveController {
   private FieldOccupier currentBarier;
   private int currentMoves;
   private bool barierMove = false;
-  
+  private Pawn deathPawn;
 
   public void SelectField(Field field) {
     if (barierMove) {
@@ -94,11 +95,13 @@ class MoveController {
   }
 
   public void OnLastTile(Field lastField) {
-        currentPawn.lastmove = true;
+    currentPawn.lastmove = true;
     switch (lastField.GetOnFieldType()) {
-      case FieldOccupierType.PLAYER: 
-        if (lastField.onField == currentPawn) break;
-        lastField.onField.MoveToField(lastField.onField.startField, null);
+      case FieldOccupierType.PLAYER:
+                deathPawn = (Pawn)lastField.onField;
+                if (lastField.onField == currentPawn) break;
+                //Add attack.
+        GameController.Instance.StartCoroutine(MoveEnemyAndAttack(StartCoroutineAction, (Pawn)lastField.onField));
         break;
       case FieldOccupierType.BARRICADE:
         StartMoveBarier(lastField.onField);
@@ -106,6 +109,10 @@ class MoveController {
     }
     // currentPawn.currentField.onField = null;
     lastField.onField = currentPawn;
+  }
+
+  private void StartCoroutineAction() {
+        GameController.Instance.StartCoroutine(AttackAnim(currentPawn, deathPawn));
   }
 
   private void StartRecursiveMove(Field field) {
@@ -148,8 +155,24 @@ class MoveController {
     target = currentPawn.currentField.Neighbours[temp];
     movedFields.Add(target);
     StartRecursiveMove(target);
-
-
   }
 
+    public IEnumerator MoveEnemyAndAttack(Action callback, Pawn enemy)
+    {
+        Vector3 diePos = enemy.currentField.transform.position;
+        diePos.z += .9f;
+        do
+        {
+            yield return new WaitForEndOfFrame();
+            enemy.transform.position = Vector3.Lerp(enemy.transform.position, diePos, 1f * Time.deltaTime);
+        } while (Vector3.Distance(diePos, enemy.transform.position) >= 0.4f);
+        callback();
+    }
+
+    public IEnumerator AttackAnim(Pawn newFieldPlayer, Pawn deadPawn) {
+        Animator animController = newFieldPlayer.GetComponent<Animator>();
+        newFieldPlayer.StartAttack();
+        yield return new WaitForSeconds(2f);
+        deadPawn.MoveToField(deadPawn.startField, null);
+    }
 };
