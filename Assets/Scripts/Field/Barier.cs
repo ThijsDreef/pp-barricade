@@ -6,6 +6,8 @@ using UnityEngine;
 public class Barier : FieldOccupier {
 
     private ParticleSystem highlighter = null;
+    [SerializeField]
+    private ParticleSystem barricadeParticle;
 
     public void Start() {
         myType = FieldOccupierType.BARRICADE;
@@ -15,6 +17,7 @@ public class Barier : FieldOccupier {
         currentField = nextField;
         transform.position = nextField.transform.position + new Vector3(0, 0.5f, 0);
         SoundManager.Instance.PlaySound("Barricade");
+        barricadeParticle.Play();
         callback?.Invoke();
     }
 

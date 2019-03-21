@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class AnimationController : MonoBehaviour {
     private Animator animator;
+    public Animator Animator { get { return animator; } set { Animator = value; } }
     private Pawn pawn;
     private void Start() {
         animator = GetComponent<Animator>();
         pawn = GetComponent<Pawn>();
         pawn.StartMoving += StartmoveAnim;
         pawn.StopMoving += StartIdleAnim;
+        pawn.StartAttack += StartAttackAnim;
     }
 
     private void StartmoveAnim() {

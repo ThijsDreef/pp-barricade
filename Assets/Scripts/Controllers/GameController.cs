@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class GameController : MonoBehaviour {
   public static GameController Instance;
-
   [SerializeField]
   private MenuController menuController = null;
   [SerializeField]
@@ -87,7 +87,7 @@ public class GameController : MonoBehaviour {
     else players[currentPlayer].HighlightUnits<HeavyPawn>(false, currentPlayer);
     currentPlayer += 1;
     currentPlayer %= players.Count;
-    StartCoroutine(StartTurn(currentPlayer, 1f));
+    StartCoroutine(StartTurn(currentPlayer, 2f));
   }
 
   public void StartGame(int playerAmount) {
@@ -101,7 +101,8 @@ public class GameController : MonoBehaviour {
         Renderer[] rend;
             rend = pawn.GetComponentsInChildren<Renderer>();
             foreach(Renderer renderer in rend) {
-              renderer.material = fatPlayerMaterials[i];
+                 if (renderer.gameObject.tag != "textureIgnore")
+                  renderer.material = fatPlayerMaterials[i];
             }
         }
 
@@ -109,8 +110,9 @@ public class GameController : MonoBehaviour {
         Renderer[] rend;
         rend = pawn.GetComponentsInChildren<Renderer>();
         foreach (Renderer renderer in rend) {
-        renderer.material = sneakyGuyMaterials[i];
-            }
+           if(renderer.gameObject.tag != "textureIgnore")
+              renderer.material = sneakyGuyMaterials[i];
+           }
         }
         pawn.startField = fields[j];
         pawn.MoveToField(fields[j], null);

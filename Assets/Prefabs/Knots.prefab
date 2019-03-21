@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5599714063251111274}
   m_Layer: 0
   m_Name: Knots
-  m_TagString: Untagged
+  m_TagString: textureIgnore
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23,9 +23,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3489496255438911618}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.001, y: 0.001, z: 0.001}
+  m_LocalScale: {x: 0.010000002, y: 0.0100000035, z: 0.010000002}
   m_Children:
   - {fileID: 8885896988919927318}
   m_Father: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 3439703499300021848}
   m_Layer: 0
   m_Name: polySurface66
-  m_TagString: Untagged
+  m_TagString: textureIgnore
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -100,6 +100,7 @@ MonoBehaviour:
   nextField: {fileID: 0}
   movementSpeed: 1.6
   yOffset: 0.08
+  animController: {fileID: 0}
   highlighterObject: {fileID: 8309961224201038489}
   childParticleSystem:
   - {fileID: 8309961225805292185}
@@ -5942,6 +5943,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dagger
       objectReference: {fileID: 0}
+    - target: {fileID: 5144815332834138895, guid: faab88ffa998bb446b7949f62c796cea,
+        type: 3}
+      propertyPath: m_TagString
+      value: textureIgnore
+      objectReference: {fileID: 0}
     - target: {fileID: 431163534420449841, guid: faab88ffa998bb446b7949f62c796cea,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6012,6 +6018,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.0070000025
       objectReference: {fileID: 0}
+    - target: {fileID: 5357260014272459390, guid: faab88ffa998bb446b7949f62c796cea,
+        type: 3}
+      propertyPath: m_TagString
+      value: textureIgnore
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: faab88ffa998bb446b7949f62c796cea, type: 3}
 --- !u!4 &1243754197950727458 stripped
@@ -6031,6 +6042,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Dagger (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144815332834138895, guid: faab88ffa998bb446b7949f62c796cea,
+        type: 3}
+      propertyPath: m_TagString
+      value: textureIgnore
       objectReference: {fileID: 0}
     - target: {fileID: 431163534420449841, guid: faab88ffa998bb446b7949f62c796cea,
         type: 3}
@@ -6101,6 +6117,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.007000004
+      objectReference: {fileID: 0}
+    - target: {fileID: 5357260014272459390, guid: faab88ffa998bb446b7949f62c796cea,
+        type: 3}
+      propertyPath: m_TagString
+      value: textureIgnore
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: faab88ffa998bb446b7949f62c796cea, type: 3}
