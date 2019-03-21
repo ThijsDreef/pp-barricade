@@ -2,25 +2,34 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class GameController : MonoBehaviour {
   public static GameController Instance;
-
   [SerializeField]
   private MenuController menuController = null;
   [SerializeField]
   private DiceController dice = null;
   [SerializeField]
-  private Text currentPlayerText = null;
+  private Image currentPlayerBulkyImage = null;
+  [SerializeField]
+  private Image currentPlayerSneakyImage = null;
   [SerializeField]
   private GameObject[] startFields = new GameObject[4];
   [SerializeField]
   private GameObject[] spawnPawns = new GameObject[4];
   [SerializeField]
+  private Sprite[] fatSelect = new Sprite[4];
+  [SerializeField]
+  private Sprite[] skinnySelect = new Sprite[4];
+  [SerializeField]
   private GameObject fieldHolder = null;
   [SerializeField]
   private GameObject[] unselectableRows = new GameObject[0];
-
+  [SerializeField]
+  private Material[] fatPlayerMaterials;
+  [SerializeField]
+  private Material[] sneakyGuyMaterials;
   public List<Field> selectableFields { get; private set;} = new List<Field>();
   private List<PlayerController> players;
   private MoveController moveController = new MoveController();
@@ -47,10 +56,19 @@ public class GameController : MonoBehaviour {
     }
   }
 
+  public void EndGame() {
+    menuController.EnableMenu(6);
+  }
+
   private void onDiceRollFinish(int i) {
     currentRol = i;
-    if (targetTypeID == 0) players[currentPlayer].HighlightUnits<SneakyPawn>(true, Color.red);
-    else players[currentPlayer].HighlightUnits<HeavyPawn>(true, Color.red);
+    if (i == 0) {
+      dice.Respawn();
+      NextTurn();
+      return;
+    } 
+    if (targetTypeID == 0) players[currentPlayer].HighlightUnits<SneakyPawn>(true, currentPlayer);
+    else players[currentPlayer].HighlightUnits<HeavyPawn>(true, currentPlayer);
   }
 
   public void SelectUnit(Pawn unit) {
@@ -59,15 +77,17 @@ public class GameController : MonoBehaviour {
   }
 
   public void SelectField(Field field) {
-    if (targetTypeID == 0) players[currentPlayer].HighlightUnits<SneakyPawn>(false, Color.red);
-    else players[currentPlayer].HighlightUnits<HeavyPawn>(false, Color.red);
+    if (targetTypeID == 0) players[currentPlayer].HighlightUnits<SneakyPawn>(false, currentPlayer);
+    else players[currentPlayer].HighlightUnits<HeavyPawn>(false, currentPlayer);
     moveController.SelectField(field);
   }
 
   public void NextTurn() {
+    if (targetTypeID == 0) players[currentPlayer].HighlightUnits<SneakyPawn>(false, currentPlayer);
+    else players[currentPlayer].HighlightUnits<HeavyPawn>(false, currentPlayer);
     currentPlayer += 1;
     currentPlayer %= players.Count;
-    StartTurn(currentPlayer);
+    StartCoroutine(StartTurn(currentPlayer, 2f));
   }
 
   public void StartGame(int playerAmount) {
@@ -77,24 +97,45 @@ public class GameController : MonoBehaviour {
       Field[] fields = startFields[i].GetComponentsInChildren<Field>();
       for (int j = 0; j < spawnPawns.Length; j++) {
         Pawn pawn = (Instantiate(spawnPawns[j], fields[j].gameObject.transform.position, Quaternion.identity).GetComponent<Pawn>());
+        if(j < 2) {
+        Renderer[] rend;
+            rend = pawn.GetComponentsInChildren<Renderer>();
+            foreach(Renderer renderer in rend) {
+                 if (renderer.gameObject.tag != "textureIgnore")
+                  renderer.material = fatPlayerMaterials[i];
+            }
+        }
+
+        if(j >= 2) {
+        Renderer[] rend;
+        rend = pawn.GetComponentsInChildren<Renderer>();
+        foreach (Renderer renderer in rend) {
+           if(renderer.gameObject.tag != "textureIgnore")
+              renderer.material = sneakyGuyMaterials[i];
+           }
+        }
         pawn.startField = fields[j];
         pawn.MoveToField(fields[j], null);
         pawn.onSelect += SelectUnit;
         players[i].AddUnit(pawn);
       }
     }
-    StartTurn(0);
+   StartCoroutine(StartTurn(0, 0f));
   }
 
-  private void StartTurn(int i) {
+  private IEnumerator StartTurn(int i, float delay) {
+    yield return new WaitForSeconds(delay);
     currentPlayer = i;
     menuController.EnableMenu(5);
-    currentPlayerText.text = "Next Up Player: " + (currentPlayer + 1);
+    currentPlayerBulkyImage.sprite = fatSelect[currentPlayer];
+    currentPlayerSneakyImage.sprite = skinnySelect[currentPlayer];
+    //currentPlayerText.text = "Next Up Player: " + (currentPlayer + 1);
+    
   }
 
   public void RollDiceForCurrentPlayer(DiceData data) {
     dice.Roll(data); 
     targetTypeID = data.id;
     menuController.EnableMenu(2);
-  } 
+  }
 }

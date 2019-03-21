@@ -6,6 +6,8 @@ using UnityEngine;
 public class Barier : FieldOccupier {
 
     private ParticleSystem highlighter = null;
+    [SerializeField]
+    private ParticleSystem barricadeParticle;
 
     public void Start() {
         myType = FieldOccupierType.BARRICADE;
@@ -14,10 +16,12 @@ public class Barier : FieldOccupier {
     public override void MoveToField(Field nextField, Action callback) {
         currentField = nextField;
         transform.position = nextField.transform.position + new Vector3(0, 0.5f, 0);
+        SoundManager.Instance.PlaySound("Barricade");
+        barricadeParticle.Play();
         callback?.Invoke();
     }
 
-    public override void EnableHighlight(bool enabled, Color color) {
+    public override void EnableHighlight(bool enabled, int color) {
         selectable = enabled;
         if(enabled == true) highlighter.Play();
         else highlighter.Stop();

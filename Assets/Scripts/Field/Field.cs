@@ -7,10 +7,12 @@ public class Field : MonoBehaviour {
     private List<Field> neighbours = new List<Field>();
 
     [SerializeField]
-    public int cost {get; private set; } = 1;
+    public int cost = 1;
     public FieldOccupier onField;
     [SerializeField]
     private GameObject selectionParticle = null;
+    [SerializeField]
+    private GameObject barricadeParticle = null;
 
     private bool selected ;
 
@@ -25,7 +27,18 @@ public class Field : MonoBehaviour {
         }
     }
 
-    private void OnMouseDown() {
+    public void BarricadeHighLight(bool on, Color highlightColor) {
+        if (on) {
+            barricadeParticle.SetActive(on);
+            selected = on;
+        }
+        else {
+            barricadeParticle.SetActive(on);
+            selected = on;
+        }
+    }
+
+    public void OnMouseDown() {
         if (selected ) GameController.Instance.SelectField(this);
     }
 

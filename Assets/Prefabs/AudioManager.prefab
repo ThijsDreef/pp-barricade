@@ -45,9 +45,9 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: ea89cc2a8a2c5064998407f8f6e1cc98, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -144,18 +144,14 @@ MonoBehaviour:
   audioMixerGroup: {fileID: 243516710904532048, guid: cec7be2ce7afa034cb1057a5bf679cb3,
     type: 2}
   sounds:
-  - soundName: HeavyWalk
+  - soundName: Select
     clip:
     - {fileID: 8300000, guid: 20a291c747b271b4a881fc4c01167568, type: 3}
     - {fileID: 8300000, guid: 6ea8f1606d84c8345b9b85ef87b370ee, type: 3}
-    - {fileID: 8300000, guid: c77c5726800dd3c4090e80e225d54c45, type: 3}
-    - {fileID: 8300000, guid: d093aa80a3cb5dc40810bb5d48d59de5, type: 3}
-    - {fileID: 8300000, guid: 8cd12ccb63873e7478e1649f7234059f, type: 3}
-    - {fileID: 8300000, guid: 7b96192d434e8804abed3ad97c756e8a, type: 3}
     delay: 0
     volume: 1
     pitch: 1
-  - soundName: SneakyWalk
+  - soundName: Walk
     clip:
     - {fileID: 8300000, guid: a722b2d133ed0004a84d2f76650f45f9, type: 3}
     - {fileID: 8300000, guid: 724ab87fda7193d428b8d9b8ef81d1ed, type: 3}
@@ -184,9 +180,17 @@ MonoBehaviour:
     pitch: 1
   - soundName: Dice
     clip:
+    - {fileID: 8300000, guid: 79be55acb52c9aa499fe835e58c581e0, type: 3}
+    - {fileID: 8300000, guid: e8009631267466140b577966d4944a18, type: 3}
+    - {fileID: 8300000, guid: 6f073f407ee0b844cb5090c05f12065e, type: 3}
+    delay: 0
+    volume: 1
+    pitch: 1
+  - soundName: Barricade
+    clip:
     - {fileID: 8300000, guid: e2951e42444ec2f4089448821cc6e896, type: 3}
     - {fileID: 8300000, guid: 74a0af5ef7e169d4694a2fcaf4468386, type: 3}
     - {fileID: 8300000, guid: fe6fa7e384b83b14984dd91c7df86a24, type: 3}
     delay: 0
-    volume: 1
+    volume: 0.3
     pitch: 1
